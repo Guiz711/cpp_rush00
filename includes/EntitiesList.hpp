@@ -31,6 +31,8 @@ class EntitiesList
 		EntitiesList(void);
 		~EntitiesList(void);
 
+		EntitiesList&	operator=(const EntitiesList& rhs);
+
 		void			addEntity(AEntity *entity);
 		void			removeEntity(EntityLink *link);
 		void			clearList(void);
@@ -44,7 +46,6 @@ class EntitiesList
 		void			destroyList(void);
 
 		EntitiesList(const EntitiesList& src);
-		EntitiesList&	operator=(const EntitiesList& rhs);		
 };
 
 #endif
