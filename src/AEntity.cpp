@@ -1,4 +1,5 @@
 #include "../includes/AEntity.hpp"
+#include "../includes/Log.hpp"
 #include <iostream>
 #include "Log.hpp"
 
@@ -16,7 +17,12 @@ AEntity::AEntity( int xPos, int yPos ){
 
 AEntity::AEntity( AEntity & src ){
   Log::instance().log("Copy Entity Constructor");
-  *this = src;
+  _sprite= src.getSprite();
+  _isAlive= src.isAlive();
+  _color= src.getColor();
+  _xPos= src.getXPos();
+  _yPos= src.getYPos();
+  _collisionMask= rhs.getCollisionMask();
   return;
 }
 
@@ -30,18 +36,18 @@ AEntity &AEntity::operator=( AEntity const & rhs ){
   _sprite= rhs.getSprite();
   _isAlive= rhs.isAlive();
   _color= rhs.getColor();
-  _xPos= rhs.getPos()[0];
-  _yPos= rhs.getPos()[1];
+  _xPos= rhs.getXPos();
+  _yPos= rhs.getYPos();
   _collisionMask= rhs.getCollisionMask();
   return *this;
 }
 
-int     *AEntity::getPos( void ) const {
-  int   *res = new int[2];
+int     AEntity::getXPos( void ) const {
+  return _xPos;
+}
 
-  res[0] = _xPos;
-  res[1] = _yPos;
-  return res;
+int     AEntity::getYPos( void ) const {
+  return _yPos;
 }
 
 char **AEntity::getSprite( void ) const {
