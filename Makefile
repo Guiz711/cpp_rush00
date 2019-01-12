@@ -6,15 +6,15 @@
 #    By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/19 14:03:15 by jgourdin          #+#    #+#              #
-#    Updated: 2019/01/12 11:21:16 by gmichaud         ###   ########.fr        #
+#    Updated: 2019/01/12 11:49:30 by gmichaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_retro
 
-SRC_NAME = main.cpp
+SRC_NAME = Log.cpp main.cpp
 
-INC_NAME = GameLoop.hpp
+INC_NAME = Log.hpp
 
 INC_PATH = ./includes
 
