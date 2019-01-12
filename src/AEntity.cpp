@@ -22,7 +22,7 @@ AEntity::AEntity( AEntity & src ){
   _color= src.getColor();
   _xPos= src.getXPos();
   _yPos= src.getYPos();
-  _collisionMask= rhs.getCollisionMask();
+  _collisionMask= src.getCollisionMask();
   return;
 }
 
