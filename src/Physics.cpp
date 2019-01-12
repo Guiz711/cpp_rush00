@@ -28,8 +28,12 @@ EntitiesList *Physics::getList( void ) const {
   return this->_list;
 }
 
+void Physics::setList( EntitiesList *list ){
+  _list = list;
+  return;
+}
 
-bool checkCollisions(AEntity *entity1, AEntity *entity2){
+bool checkCollision(AEntity *entity1, AEntity *entity2){
   std::string   *sprite1;
   std::string   *sprite2;
   int           xPos1;
@@ -58,7 +62,7 @@ bool checkCollisions(AEntity *entity1, AEntity *entity2){
 }
 
 
-void Physics::checkMaskCollisions( void ){
+void Physics::checkCollisions( void ){
     EntityLink    list1;
     EntityLink    list2;
     AEntity       *entity1;
@@ -76,7 +80,7 @@ void Physics::checkMaskCollisions( void ){
         while (entity2 != NULL){
           mask2 = entity2->getCollisionMask();
           if (mask1 & mask2){
-            res = checkCollisions(entity1, entity2);
+            res = checkCollision(entity1, entity2);
             if (res == true ){
       //        entity1->onCollision();
         //      entity2->onCollision();

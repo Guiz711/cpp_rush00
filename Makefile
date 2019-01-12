@@ -13,7 +13,7 @@
 NAME = ft_retro
 
 SRC_NAME = Log.cpp AEntity.cpp EntitiesList.cpp main.cpp Renderer.cpp \
-	TimeClass.cpp Inputs.cpp Physics.cpp
+	TimeClass.cpp Inputs.cpp Physics.cpp GameLoop.cpp
 
 INC_NAME = Log.hpp AEntity.hpp EntitiesList.hpp Renderer.hpp Inputs.hpp
 
