@@ -19,7 +19,7 @@ class Physics{
 
     void checkMaskCollisions( void );
 
-    EntitiesList *getList( void )
-}
+    EntitiesList *getList( void ) const ;
+};
 
 #endif
