@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 15:16:10 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/12 17:30:22 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/12 18:13:34 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 Renderer::Renderer(void)
 {
-	initscr();
-	cbreak();
-	keypad(stdscr, TRUE);
+	if (!stdscr)
+		initscr();
 	curs_set(0);
 	getmaxyx(stdscr, _width, _height);
 }

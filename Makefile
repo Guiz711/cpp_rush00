@@ -6,16 +6,16 @@
 #    By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/19 14:03:15 by jgourdin          #+#    #+#              #
-#    Updated: 2019/01/12 17:34:20 by gmichaud         ###   ########.fr        #
+#    Updated: 2019/01/12 18:09:08 by gmichaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_retro
 
 SRC_NAME = Log.cpp AEntity.cpp EntitiesList.cpp main.cpp Renderer.cpp \
-	TimeClass.cpp
+	TimeClass.cpp Inputs.cpp
 
-INC_NAME = Log.hpp AEntity.hpp EntitiesList.hpp Renderer.hpp
+INC_NAME = Log.hpp AEntity.hpp EntitiesList.hpp Renderer.hpp Inputs.hpp
 
 INC_PATH = ./includes
 
