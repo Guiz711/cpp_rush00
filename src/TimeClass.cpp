@@ -4,7 +4,6 @@
 
 TimeClass::TimeClass( void ){
   Log::instance().log("Default TimeClass Constructor");
-  _t = time(NULL);
   return;
 }
 
@@ -32,7 +31,7 @@ void TimeClass::setDeltaTime( void ){
   float       sec;
 
   gettimeofday(&time, NULL);
-  ms = (time.tv_sec * 1000) + (time.tv_usec / 1000);
+  sec = (time.tv_sec) + (time.tv_usec / 100000);
   _deltaTime = _frameTime - sec;
   return;
 }
@@ -42,7 +41,7 @@ void TimeClass::setFrameTime( void ){
   float       sec;
 
   gettimeofday(&time, NULL);
-  ms = (time.tv_sec * 1000) + (time.tv_usec / 1000);
+  sec = (time.tv_sec) + (time.tv_usec / 1000);
   _frameTime = sec;
   return;
 }
