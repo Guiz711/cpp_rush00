@@ -1,4 +1,5 @@
 #include "../includes/AEntity.hpp"
+#include "../includes/Log.hpp"
 #include <iostream>
 
 AEntity::AEntity( void ){
@@ -53,10 +54,6 @@ std::string AEntity::getColor( void ) const {
 
 bool AEntity::isAlive( void ) const {
   return _isAlive;
-}
-
-std::string  getColor( void ) const {
-  return _color;
 }
 
 enum *AEntity::getCollisionMask( void ) const {
