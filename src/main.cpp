@@ -34,7 +34,7 @@ int main(void)
 	lst->addEntity(test3);
 
 	Physics			phys(lst);
-	phys.checkMaskCollisions();
+	phys.checkCollisions();
 
 	// while(1)
 	// {

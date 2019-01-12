@@ -36,6 +36,7 @@ class EntitiesList
 		void			addEntity(AEntity *entity);
 		void			removeEntity(EntityLink *link);
 		void			clearList(void);
+		void			destroyList(void);
 
 		EntityLink		*getList(void) const;
 
@@ -43,7 +44,6 @@ class EntitiesList
 		EntityLink		*_list;
 
 		void			copyList(EntityLink *src);
-		void			destroyList(void);
 
 		EntitiesList(const EntitiesList& src);
 };

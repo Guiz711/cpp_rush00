@@ -8,17 +8,16 @@ class Physics{
   private:
     EntitiesList  *_list;
 
-    Physics( void );
-
   public:
+    Physics( void );
     Physics( EntitiesList *list);
     Physics( Physics const & src );
     ~Physics( void );
 
     Physics &operator=(Physics const & rhs);
 
-    void checkMaskCollisions( void );
-
+    void checkCollisions( void );
+    void setList( EntitiesList *list );
     EntitiesList *getList( void ) const ;
 };
 

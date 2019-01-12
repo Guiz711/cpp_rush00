@@ -115,3 +115,9 @@
 [20190112_190508]     LOG | Entity Destructor
 [20190112_190508]     LOG | Entity Destructor
 [20190112_190508]     LOG | Entity Destructor
+[20190112_204210]     LOG | Entity Parametric Constructor
+[20190112_204210]     LOG | Entity Parametric Constructor
+[20190112_204210]     LOG | Entity Parametric Constructor
+[20190112_204210]     LOG | Entity Destructor
+[20190112_204210]     LOG | Entity Destructor
+[20190112_204210]     LOG | Entity Destructor
