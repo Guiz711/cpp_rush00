@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 11:35:51 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/12 15:05:05 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/12 15:19:18 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,7 @@ class EntitiesList
 {
 	public:
 		EntitiesList(void);
-		EntitiesList(const EntitiesList& src);
 		~EntitiesList(void);
-
-		EntitiesList&	operator=(const EntitiesList& rhs);		
 
 		void			addEntity(AEntity *entity);
 		void			removeEntity(EntityLink *link);
@@ -45,6 +42,9 @@ class EntitiesList
 
 		void			copyList(EntityLink *src);
 		void			destroyList(void);
+
+		EntitiesList(const EntitiesList& src);
+		EntitiesList&	operator=(const EntitiesList& rhs);		
 };
 
 #endif
