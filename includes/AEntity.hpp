@@ -31,7 +31,7 @@ class AEntity{
     // virtual void update( void ) = 0;
     // virtual void onCollision( void ) = 0;
     int          getXPos( void ) const ;
-    int          getYpos( void ) const ;
+    int          getYPos( void ) const ;
     char       **getSprite( void ) const ;
     std::string  getColor( void ) const ;
     bool         isAlive( void ) const ;

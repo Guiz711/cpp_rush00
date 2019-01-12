@@ -12,7 +12,7 @@
 
 NAME = ft_retro
 
-SRC_NAME = Log.cpp main.cpp TimeClass.cpp
+SRC_NAME = Log.cpp main.cpp AEntity.cpp 
 
 INC_NAME = Log.hpp
 
