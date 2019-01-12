@@ -19,3 +19,99 @@
 [20190112_173431]     LOG | Entity Destructor
 [20190112_173431]     LOG | Entity Destructor
 [20190112_173431]     LOG | Entity Destructor
+[20190112_185050]     LOG | Entity Parametric Constructor
+[20190112_185050]     LOG | Entity Parametric Constructor
+[20190112_185050]     LOG | Entity Parametric Constructor
+[20190112_185050]     LOG | Entity Destructor
+[20190112_185050]     LOG | Entity Destructor
+[20190112_185050]     LOG | Entity Destructor
+[20190112_185107]     LOG | Entity Parametric Constructor
+[20190112_185107]     LOG | Entity Parametric Constructor
+[20190112_185107]     LOG | Entity Parametric Constructor
+[20190112_185107]     LOG | Entity Destructor
+[20190112_185107]     LOG | Entity Destructor
+[20190112_185107]     LOG | Entity Destructor
+[20190112_185203]     LOG | Entity Parametric Constructor
+[20190112_185203]     LOG | Entity Parametric Constructor
+[20190112_185203]     LOG | Entity Parametric Constructor
+[20190112_185203]     LOG | Entity Destructor
+[20190112_185203]     LOG | Entity Destructor
+[20190112_185203]     LOG | Entity Destructor
+[20190112_185308]     LOG | Entity Parametric Constructor
+[20190112_185308]     LOG | Entity Parametric Constructor
+[20190112_185308]     LOG | Entity Parametric Constructor
+[20190112_185308]     LOG | Entity Destructor
+[20190112_185308]     LOG | Entity Destructor
+[20190112_185308]     LOG | Entity Destructor
+[20190112_185454]     LOG | Entity Parametric Constructor
+[20190112_185454]     LOG | Entity Parametric Constructor
+[20190112_185454]     LOG | Entity Parametric Constructor
+[20190112_185454]     LOG | Entity Destructor
+[20190112_185454]     LOG | Entity Destructor
+[20190112_185454]     LOG | Entity Destructor
+[20190112_185527]     LOG | Entity Parametric Constructor
+[20190112_185527]     LOG | Entity Parametric Constructor
+[20190112_185527]     LOG | Entity Parametric Constructor
+[20190112_185527]     LOG | Entity Destructor
+[20190112_185527]     LOG | Entity Destructor
+[20190112_185527]     LOG | Entity Destructor
+[20190112_185612]     LOG | Entity Parametric Constructor
+[20190112_185612]     LOG | Entity Parametric Constructor
+[20190112_185612]     LOG | Entity Parametric Constructor
+[20190112_185612]     LOG | Entity Destructor
+[20190112_185612]     LOG | Entity Destructor
+[20190112_185612]     LOG | Entity Destructor
+[20190112_185706]     LOG | Entity Parametric Constructor
+[20190112_185706]     LOG | Entity Parametric Constructor
+[20190112_185706]     LOG | Entity Parametric Constructor
+[20190112_185706]     LOG | Entity Destructor
+[20190112_185706]     LOG | Entity Destructor
+[20190112_185706]     LOG | Entity Destructor
+[20190112_185757]     LOG | Entity Parametric Constructor
+[20190112_185757]     LOG | Entity Parametric Constructor
+[20190112_185757]     LOG | Entity Parametric Constructor
+[20190112_185757]     LOG | Entity Destructor
+[20190112_185757]     LOG | Entity Destructor
+[20190112_185757]     LOG | Entity Destructor
+[20190112_185844]     LOG | Entity Parametric Constructor
+[20190112_185844]     LOG | Entity Parametric Constructor
+[20190112_185844]     LOG | Entity Parametric Constructor
+[20190112_185844]     LOG | Entity Destructor
+[20190112_185844]     LOG | Entity Destructor
+[20190112_185844]     LOG | Entity Destructor
+[20190112_185920]     LOG | Entity Parametric Constructor
+[20190112_185920]     LOG | Entity Parametric Constructor
+[20190112_185920]     LOG | Entity Parametric Constructor
+[20190112_185920]     LOG | Entity Destructor
+[20190112_185920]     LOG | Entity Destructor
+[20190112_185920]     LOG | Entity Destructor
+[20190112_185947]     LOG | Entity Parametric Constructor
+[20190112_185947]     LOG | Entity Parametric Constructor
+[20190112_185947]     LOG | Entity Parametric Constructor
+[20190112_185947]     LOG | Entity Destructor
+[20190112_185947]     LOG | Entity Destructor
+[20190112_185947]     LOG | Entity Destructor
+[20190112_190110]     LOG | Entity Parametric Constructor
+[20190112_190110]     LOG | Entity Parametric Constructor
+[20190112_190110]     LOG | Entity Parametric Constructor
+[20190112_190110]     LOG | Entity Destructor
+[20190112_190110]     LOG | Entity Destructor
+[20190112_190110]     LOG | Entity Destructor
+[20190112_190203]     LOG | Entity Parametric Constructor
+[20190112_190203]     LOG | Entity Parametric Constructor
+[20190112_190203]     LOG | Entity Parametric Constructor
+[20190112_190203]     LOG | Entity Destructor
+[20190112_190203]     LOG | Entity Destructor
+[20190112_190203]     LOG | Entity Destructor
+[20190112_190250]     LOG | Entity Parametric Constructor
+[20190112_190250]     LOG | Entity Parametric Constructor
+[20190112_190250]     LOG | Entity Parametric Constructor
+[20190112_190250]     LOG | Entity Destructor
+[20190112_190250]     LOG | Entity Destructor
+[20190112_190250]     LOG | Entity Destructor
+[20190112_190508]     LOG | Entity Parametric Constructor
+[20190112_190508]     LOG | Entity Parametric Constructor
+[20190112_190508]     LOG | Entity Parametric Constructor
+[20190112_190508]     LOG | Entity Destructor
+[20190112_190508]     LOG | Entity Destructor
+[20190112_190508]     LOG | Entity Destructor

@@ -15,7 +15,7 @@ AEntity::AEntity( int xPos, int yPos ){
   _sprite = new std::string[4];
   _sprite[0] = "|\\";
   _sprite[1] = "}=O>";
-  _sprite[2] = "|/";
+  _sprite[2] = "|/ ";
   _sprite[3] = "";
 
   Log::instance().log("Entity Parametric Constructor");

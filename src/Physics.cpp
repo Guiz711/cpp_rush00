@@ -45,10 +45,10 @@ bool checkCollisions(AEntity *entity1, AEntity *entity2){
   yPos2 = entity2->getYPos();
 
   for (int i1 = 0; sprite1[i1][0]; i1 += 1){
-    for (int j1 = 0; j1 < sprite1[i1].length(); j1 += 1){
+    for (int j1 = 0; sprite1[i1][j1]; j1 += 1){
       for (int i2 = 0; sprite2[i2][0]; i2 += 1){
-        for (int j2 = 0; j2 < sprite2[i2].length(); j2 += 1){
-          if ((xPos1 + i1 == xPos2 + i1) && (yPos1 + j1 == yPos2 + j2) && (sprite1[i1][j1] != ' ') && (sprite2[i2][j2] != ' '))
+        for (int j2 = 0; sprite2[i2][j2]; j2 += 1){
+          if ((yPos1 + i1 == yPos2 + i2) && (xPos1 + j1 == xPos2 + j2) && (sprite1[i1][j1] != ' ') && (sprite2[i2][j2] != ' '))
             return true;
         }
       }
@@ -78,8 +78,9 @@ void Physics::checkMaskCollisions( void ){
           if (mask1 & mask2){
             res = checkCollisions(entity1, entity2);
             if (res == true ){
-              entity1->setNotAlive();
-              entity2->setNotAlive();
+      //        entity1->onCollision();
+        //      entity2->onCollision();
+                std::cout << "collision" << std::endl;
             }
           }
           if (list2.next != NULL){

@@ -75,7 +75,7 @@ void		Log::logWarning(const std::string& message) const
 
 	if (ofs.is_open())
 		ofs << this->getTimestamp()
-			<< "  ERROR | " << message << std::endl;
+			<< "WARNING | " << message << std::endl;
 	else
 		std::cout << this->_FilePath << " couldn't be open." << std::endl;
 	ofs.close();
@@ -87,7 +87,7 @@ void		Log::logError(const std::string& message) const
 
 	if (ofs.is_open())
 		ofs << this->getTimestamp()
-			<< "WARNING | " << message << std::endl;
+			<< "  ERROR | " << message << std::endl;
 	else
 		std::cout << this->_FilePath << " couldn't be open." << std::endl;
 	ofs.close();

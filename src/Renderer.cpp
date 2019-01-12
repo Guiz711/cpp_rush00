@@ -56,4 +56,4 @@ void		Renderer::placeSprite(int x, int y, std::string *sprite)
 }
 
 int			Renderer::getBoardX(void) const { return _width; }
-int			Renderer::getBoardY(void) const { return _height; } 
+int			Renderer::getBoardY(void) const { return _height; }
