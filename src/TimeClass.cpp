@@ -1,16 +1,16 @@
 #include "../includes/TimeClass.hpp"
 #include "../includes/Log.hpp"
-
+#include <sys/time.h>
 
 TimeClass::TimeClass( void ){
   Log::instance().log("Default TimeClass Constructor");
-  _t = time(NULL);
   return;
 }
 
 TimeClass::TimeClass( TimeClass const & src ){
   Log::instance().log("CopyTimeClass Constructor");
-  *this = src;
+  _deltaTime = src.getDelta();
+  _frameTime = src.getFrame();
   return;
 }
 
@@ -27,19 +27,22 @@ TimeClass &TimeClass::operator=( TimeClass const & rhs){
 }
 
 void TimeClass::setDeltaTime( void ){
-//  int     actualTime;
+  timeval     time;
+  float       sec;
 
-  std::cout << localtime(&_t);
-  //actualTime = localtime(&_t);
-//  Log::instance().log("delta TimeClass is" << localtime(&_t));
-//  _deltaTime = actualTime - _frameTime;
+  gettimeofday(&time, NULL);
+  sec = (time.tv_sec) + (time.tv_usec / 100000);
+  _deltaTime = _frameTime - sec;
   return;
 }
 
 void TimeClass::setFrameTime( void ){
-  //_frameTime = localtime(&_t);
-  std::cout << localtime(&_t);
-//  Log::instance().log("new TimeClass is" << localtime(&_t));
+  timeval     time;
+  float       sec;
+
+  gettimeofday(&time, NULL);
+  sec = (time.tv_sec) + (time.tv_usec / 1000);
+  _frameTime = sec;
   return;
 }
 

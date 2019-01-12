@@ -2,11 +2,9 @@
 # define TIMECLASS_HPP
 
 #include <string>
-#include <time.h>
 
 class TimeClass{
   private:
-    static time_t    _t;
     int              _deltaTime;
     int              _frameTime;
 

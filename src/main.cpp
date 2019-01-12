@@ -13,6 +13,12 @@
 #include "EntitiesList.hpp"
 #include "Renderer.hpp"
 #include <iostream>
+#include <sys/time.h>
+#include <unistd.h>
+
+
+#include <ctime>
+
 
 int main(void)
 {
@@ -30,5 +36,7 @@ int main(void)
 		renderer.renderScreen(lst->getList());
 	}
 	delete lst;
-	return 0;
+
+
+  return 0;
 }
