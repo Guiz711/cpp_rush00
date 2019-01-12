@@ -1,5 +1,6 @@
 #include "../includes/AEntity.hpp"
 #include <iostream>
+#include "Log.hpp"
 
 AEntity::AEntity( void ){
   Log::instance().log("Default Entity Constructor");
@@ -16,7 +17,7 @@ AEntity::AEntity( int xPos, int yPos ){
 AEntity::AEntity( AEntity & src ){
   Log::instance().log("Copy Entity Constructor");
   *this = src;
-  return this;
+  return;
 }
 
 AEntity::~AEntity( void ){
@@ -36,7 +37,7 @@ AEntity &AEntity::operator=( AEntity const & rhs ){
 }
 
 int     *AEntity::getPos( void ) const {
-  int   res[2];
+  int   *res = new int[2];
 
   res[0] = _xPos;
   res[1] = _yPos;
@@ -55,10 +56,6 @@ bool AEntity::isAlive( void ) const {
   return _isAlive;
 }
 
-std::string  getColor( void ) const {
-  return _color;
-}
-
-enum *AEntity::getCollisionMask( void ) const {
+Collision AEntity::getCollisionMask( void ) const {
   return _collisionMask;
 }

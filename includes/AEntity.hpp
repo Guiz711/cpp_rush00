@@ -3,14 +3,22 @@
 
 #include <string>
 
+enum Collision
+{
+	PLAYER = 1 << 0,
+	ENEMIES = 1 << 1,
+	LAND = 1 << 2,
+	UI = 1 << 3
+};
+
 class AEntity{
   protected:
-    char            **_sprite = NULL;
-    bool            _isAlive = true;
+    char            **_sprite;
+    bool            _isAlive;
     std::string     _color;
     int             _xPos;
     int             _yPos;
-    enum            _collisionMask{ Player, Enemies, Decor, Ui };
+    Collision       _collisionMask;
 
   public:
     AEntity( void );
@@ -20,14 +28,13 @@ class AEntity{
 
     AEntity &operator=( AEntity const & rhs );
 
-    virtual void update( void ) = 0;
-    virtual void onCollision( void ) = 0;
-    int         *getPos( void ) const ;
+    // virtual void update( void ) = 0;
+    // virtual void onCollision( void ) = 0;
+    int          *getPos( void ) const ;
     char       **getSprite( void ) const ;
     std::string  getColor( void ) const ;
     bool         isAlive( void ) const ;
-    std::string  getColor( void ) const ;
-    enum        *getCollisionMask( void ) const ;
+    Collision    getCollisionMask( void ) const ;
 };
 
 
