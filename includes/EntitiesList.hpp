@@ -32,7 +32,7 @@ class EntitiesList
 		EntitiesList(const EntitiesList& src);
 		~EntitiesList(void);
 
-		EntitiesList&	operator=(const EntitiesList& rhs);		
+		EntitiesList&	operator=(const EntitiesList& rhs);
 
 		void			addEntity(AEntity *entity);
 		void			removeEntity(EntityLink *link);

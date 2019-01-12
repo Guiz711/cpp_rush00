@@ -65,3 +65,8 @@ bool AEntity::isAlive( void ) const {
 Collision AEntity::getCollisionMask( void ) const {
   return _collisionMask;
 }
+
+void AEntity::setNotAlive( void ){
+  this->_isAlive = false;
+  return;
+}

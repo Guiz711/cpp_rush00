@@ -36,6 +36,7 @@ class AEntity{
     std::string  getColor( void ) const ;
     bool         isAlive( void ) const ;
     Collision    getCollisionMask( void ) const ;
+    void         setNotAlive( void );
 };
 
 

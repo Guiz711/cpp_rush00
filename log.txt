@@ -13,3 +13,9 @@
 [20190112_145436]   ERROR | Hi
 [20190112_145436]     LOG | How are you?
 [20190112_145436] WARNING | Ouch
+[20190112_173431]     LOG | Entity Parametric Constructor
+[20190112_173431]     LOG | Entity Parametric Constructor
+[20190112_173431]     LOG | Entity Parametric Constructor
+[20190112_173431]     LOG | Entity Destructor
+[20190112_173431]     LOG | Entity Destructor
+[20190112_173431]     LOG | Entity Destructor
