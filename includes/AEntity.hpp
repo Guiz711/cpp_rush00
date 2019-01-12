@@ -13,7 +13,7 @@ enum Collision
 
 class AEntity{
   protected:
-    char            **_sprite;
+    std::string    	*_sprite;
     bool            _isAlive;
     std::string     _color;
     int             _xPos;
@@ -32,7 +32,7 @@ class AEntity{
     // virtual void onCollision( void ) = 0;
     int          getXPos( void ) const ;
     int          getYPos( void ) const ;
-    char       **getSprite( void ) const ;
+    std::string  *getSprite( void ) const ;
     std::string  getColor( void ) const ;
     bool         isAlive( void ) const ;
     Collision    getCollisionMask( void ) const ;

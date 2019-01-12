@@ -6,15 +6,16 @@
 #    By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/19 14:03:15 by jgourdin          #+#    #+#              #
-#    Updated: 2019/01/12 14:53:10 by gmichaud         ###   ########.fr        #
+#    Updated: 2019/01/12 17:34:20 by gmichaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_retro
 
-SRC_NAME = Log.cpp AEntity.cpp EntitiesList.cpp main.cpp TimeClass.cpp
+SRC_NAME = Log.cpp AEntity.cpp EntitiesList.cpp main.cpp Renderer.cpp \
+	TimeClass.cpp Physics.hpp
 
-INC_NAME = Log.hpp AEntity.hpp EntitiesList.hpp
+INC_NAME = Log.hpp AEntity.hpp EntitiesList.hpp Renderer.hpp
 
 INC_PATH = ./includes
 
@@ -22,11 +23,11 @@ INC_FLAGS = -I./includes
 
 LIB_FLAGS =
 
-LIBS =
+LIBS = -lncurses
 
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = #-Wall -Wextra -Werror
 
 SRC_PATH = src
 

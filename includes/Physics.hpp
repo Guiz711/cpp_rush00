@@ -17,7 +17,7 @@ class Physics{
 
     Physics &operator=(Physics const & rhs);
 
-    void checkCollisions( void );
+    void checkMaskCollisions( void );
 
     EntitiesList *getList( void )
 }

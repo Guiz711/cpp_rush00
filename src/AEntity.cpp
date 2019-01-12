@@ -11,6 +11,11 @@ AEntity::AEntity( void ){
 AEntity::AEntity( int xPos, int yPos ){
   _xPos = xPos;
   _yPos = yPos;
+  _sprite = new std::string[4];
+  _sprite[0] = "|\\";
+  _sprite[1] = "}=O>";
+  _sprite[2] = "|/";
+  _sprite[3] = "";
   Log::instance().log("Entity Parametric Constructor");
   return;
 }
@@ -50,7 +55,7 @@ int     AEntity::getYPos( void ) const {
   return _yPos;
 }
 
-char **AEntity::getSprite( void ) const {
+std::string *AEntity::getSprite( void ) const {
   return _sprite;
 }
 

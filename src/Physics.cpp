@@ -28,13 +28,32 @@ EntitiesList *Physics::getList( void ){
 }
 
 
-
 bool checkCollisions(AEntity *entity1, AEntity *entity2){
-  while ( )
-  if (ne sont pqs qu meme endroit){
-    return false;
+  std::string   *sprite1;
+  std::string   *sprite2;
+  int           xPos1;
+  int           xPos2;
+  int           yPos1;
+  int           yPos2;
+
+  sprite1 = entity1.getSprite();
+  sprite2 = entity2.getSprite();
+  xPos1 = entity1.getXPos();
+  xPos2 = entity2.getXPos();
+  yPos1 = entity1.getYPos();
+  yPos2 = entity2.getYpos();
+
+  for (int i1 = 0; sprite1[i1][0]; i1 += 1){
+    for (int j1 = 0; j1 < sprite1[i1].length(); j1 += 1){
+      for (int i2 = 0; sprite[i2][0]; i2 += 1){
+        for (int j2 = 0; j2 < sprite2[i2].length(); j2 += 1){
+          if ((xPos1 + i1 == xPos2 + i1) && (yPos1 + j1 == yPos2 + j2) && (sprite1[i1][j1] != " ") && (sprite3[i2][j2] != " "))
+            return true;
+        }
+      }
+    }
   }
-  return true;
+  return false;
 }
 
 
