@@ -2,54 +2,57 @@
 #include "../includes/Log.hpp"
 #include <sys/time.h>
 
-TimeClass::TimeClass( void ){
-  Log::instance().log("Default TimeClass Constructor");
-  return;
+TimeClass::TimeClass( void ):
+	_timeSinceStartup(0),
+	_deltaTime(0)
+{
+	double curTime = TimeClass::getCurrentTime();
+
+	_startupTime = curTime;
+	_lastFrameTime = curTime;
+
+	Log::instance().log("Default TimeClass Constructor");
 }
 
-TimeClass::TimeClass( TimeClass const & src ){
-  Log::instance().log("CopyTimeClass Constructor");
-  _deltaTime = src.getDelta();
-  _frameTime = src.getFrame();
-  return;
+TimeClass::TimeClass( TimeClass const & src ):
+	_timeSinceStartup(src.getTimeSinceStartup()),
+	_deltaTime(src.getDeltaTime()),
+	_startupTime(src.getStartupTime()),
+	_lastFrameTime(src.getLastFrameTime())
+{}
+
+TimeClass::~TimeClass( void ) {};
+
+TimeClass &TimeClass::operator=( TimeClass const & src)
+{
+	if (this == &src)
+		return *this;
+
+	_timeSinceStartup = src.getTimeSinceStartup();
+	_deltaTime = src.getDeltaTime();
+	_startupTime =src.getStartupTime();
+	_lastFrameTime = src.getLastFrameTime();
+	return *this;
 }
 
-TimeClass::~TimeClass( void ){
-  Log::instance().log("TimeClass Destructor");
-  return;
+double	TimeClass::getCurrentTime(void)
+{
+	struct timespec curTime;
+
+	clock_gettime(CLOCK_MONOTONIC, &curTime);
+	return curTime.tv_sec + curTime.tv_nsec * 1e-9;
 }
 
-TimeClass &TimeClass::operator=( TimeClass const & rhs){
-  Log::instance().log("TimeClass Operator =");
-  _deltaTime = rhs.getDelta();
-  _frameTime = rhs.getFrame();
-  return *this;
+void TimeClass::updateTime( void )
+{
+	double now = TimeClass::getCurrentTime();
+
+	_timeSinceStartup = now - _startupTime;
+	_deltaTime = now - _lastFrameTime;
+	_lastFrameTime = now;
 }
 
-void TimeClass::setDeltaTime( void ){
-  timeval     time;
-  float       sec;
-
-  gettimeofday(&time, NULL);
-  sec = (time.tv_sec) + (time.tv_usec / 100000);
-  _deltaTime = _frameTime - sec;
-  return;
-}
-
-void TimeClass::setFrameTime( void ){
-  timeval     time;
-  float       sec;
-
-  gettimeofday(&time, NULL);
-  sec = (time.tv_sec) + (time.tv_usec / 1000);
-  _frameTime = sec;
-  return;
-}
-
-int TimeClass::getDelta( void ) const {
-  return _deltaTime;
-}
-
-int TimeClass::getFrame( void ) const {
-  return _frameTime;
-}
+double TimeClass::getDeltaTime(void) const { return _deltaTime; }
+double TimeClass::getTimeSinceStartup(void) const { return _timeSinceStartup; }
+double TimeClass::getStartupTime(void) const { return _startupTime; }
+double TimeClass::getLastFrameTime(void) const { return _lastFrameTime; }

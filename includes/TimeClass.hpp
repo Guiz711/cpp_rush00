@@ -5,8 +5,12 @@
 
 class TimeClass{
   private:
-    int              _deltaTime;
-    int              _frameTime;
+    double              	_deltaTime;
+	double				_timeSinceStartup;
+    double              	_lastFrameTime;
+	double				_startupTime;
+
+	static double		getCurrentTime(void);
 
   public:
     TimeClass( void );
@@ -15,11 +19,12 @@ class TimeClass{
 
     TimeClass &operator=( TimeClass const & rhs);
 
-    void setDeltaTime( void );
-    void setFrameTime( void );
+	void				updateTime(void);
 
-    int getDelta( void ) const ;
-    int getFrame( void ) const ;
+    double 				getDeltaTime(void) const;
+    double 				getTimeSinceStartup(void) const;
+	double 				getStartupTime(void) const;
+	double 				getLastFrameTime(void) const;
 };
 
 #endif
