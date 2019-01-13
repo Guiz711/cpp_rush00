@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Game.hpp"
+#include "Decors.hpp"
 
 Game::Game(void):
 	AEntity()
@@ -36,7 +37,17 @@ void Game::onCollision(void)
 
 void Game::init()
 {
-	GameLoop::addEntity(new Player);
+	int			width;
+	int			width_screen;
+	
+	width = 20;
+	width_screen = GameLoop::getBoardWidth();
+	while( width < width_screen){
+		GameLoop::addEntity(new Decors(true, width, 0));
+		GameLoop::addEntity(new Decors(false, width, 0));
+		width += 16;
+	}
+	GameLoop::addEntity(new Player(0, int(GameLoop::getBoardHeight()/2)));
 	GameLoop::addEntity(new MedEnemy(120,10));
 	GameLoop::addEntity(new BigEnemy(150, 30));
 }
