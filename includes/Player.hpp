@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 09:49:52 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 12:38:43 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 14:44:01 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class Player: public AEntity
 	private:
 		float		_velocity[2];
 		int			_life;
+		double		_lastMove;
 };
 
 #endif

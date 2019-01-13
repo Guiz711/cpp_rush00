@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 17:49:02 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 09:57:01 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 14:49:19 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Inputs
 		~Inputs(void);
 
 		static bool	getKeyDown(Keys keycode);
+		static bool inputReceived();
 
 		void	updateInputs(void);
 

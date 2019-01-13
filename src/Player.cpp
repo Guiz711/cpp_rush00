@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 09:50:52 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 12:40:34 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 14:53:15 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 Player::Player(void):
 	AEntity()
 {
+	_lastMove = 0;
+
 	_velocity[0] = 0;
 	_velocity[1] = 0;
 
@@ -32,6 +34,7 @@ Player::Player(void):
 }
 
 Player::Player(Player const &src): AEntity(){
+	_lastMove = 0;
 	_velocity[0] = src.getVelocity0();
 	_velocity[1] = src.getVelocity1();
 	_life = src.getLife();
@@ -48,6 +51,8 @@ Player::Player(Player const &src): AEntity(){
 Player::Player( float posX, float posY ):
 	AEntity(posX, posY)
 	{
+	_lastMove = 0;
+
 	_velocity[0] = 0;
 	_velocity[1] = 0;
 
@@ -79,23 +84,30 @@ Player&	Player::operator=(const Player& rhs){
 
 void	Player::update(void)
 {
+	double	time = Time::getTimeSinceStartup();
+
 	_velocity[0] = 0;
 	_velocity[1] = 0;
 
-	if (Inputs::getKeyDown(INP_UP))
-		_velocity[1] = -5000;
-	if (Inputs::getKeyDown(INP_DOWN))
-		_velocity[1] = 5000;
-	if (Inputs::getKeyDown(INP_LEFT))
-		_velocity[0] = -5000;
-	if (Inputs::getKeyDown(INP_RIGHT))
-		_velocity[0] = 5000;
-	if (Inputs::getKeyDown(INP_SPACE))
-		GameLoop::addEntity(new Projectile(_xPos + 4, _yPos + 1, _collisionMask, 20));
+	if (Inputs::inputReceived() && time - _lastMove >= 0.2)
+	{
+		_lastMove = time;
+
+		if (Inputs::getKeyDown(INP_UP))
+			_velocity[1] -= 1;
+		if (Inputs::getKeyDown(INP_DOWN))
+			_velocity[1] += 1;
+		if (Inputs::getKeyDown(INP_LEFT))
+			_velocity[0] -= 3;
+		if (Inputs::getKeyDown(INP_RIGHT))
+			_velocity[0] += 3;
+		if (Inputs::getKeyDown(INP_SPACE))
+			GameLoop::addEntity(new Projectile(_xPos + 4, _yPos + 1, _collisionMask, 20));
+	}
 
 	// Log::instance().logWarning(std::to_string(_velocity[1]));
-	_xPos += _velocity[0] * (float)Time::getDeltaTime();
-	_yPos += _velocity[1] * (float)Time::getDeltaTime();
+	_xPos += _velocity[0]; //* (float)Time::getDeltaTime();
+	_yPos += _velocity[1]; //* (float)Time::getDeltaTime();
 }
 
 void Player::onCollision(AEntity *collider)
