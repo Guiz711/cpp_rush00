@@ -6,11 +6,12 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 17:49:04 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 09:57:04 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 14:54:27 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Inputs.hpp"
+#include "Log.hpp"
 
 int	Inputs::_keyBuffer = 0;
 
@@ -19,7 +20,7 @@ Inputs::Inputs(void):
 {
 	if (!stdscr)
 		initscr();
-	cbreak();
+	// cbreak();
 	noecho();
 	keypad(stdscr, TRUE);
 	nodelay(stdscr, TRUE);
@@ -37,23 +38,27 @@ void	Inputs::updateInputs(void)
 {
 	int	key = getch();
 
-	if (key == ERR)
-		_keyBuffer = 0;
-	else if (key == KEY_UP)
+	if (_keyBuffer != INP_UP && key == KEY_UP)
 		_keyBuffer = INP_UP;
-	else if (key == KEY_DOWN)
+	else if (_keyBuffer != INP_DOWN && key == KEY_DOWN)
 		_keyBuffer = INP_DOWN;
-	else if (key == KEY_RIGHT)
+	else if (_keyBuffer != INP_RIGHT && key == KEY_RIGHT)
 		_keyBuffer = INP_RIGHT;
-	else if (key == KEY_LEFT)
+	else if (_keyBuffer != INP_LEFT && key == KEY_LEFT)
 		_keyBuffer = INP_LEFT;
-	else if (key == ' ')
+	else if (_keyBuffer != INP_SPACE && key == ' ')
 		_keyBuffer = INP_SPACE;
-	else if (key == 'q')
+	else if (_keyBuffer != INP_Q && key == 'q')
 		_keyBuffer = INP_Q;
+	else
+		_keyBuffer = 0;
+
+	// Log::instance().logError(std::to_string(key));	
 }
 
 bool	Inputs::getKeyDown(Keys keycode)
 {
 	return _keyBuffer & keycode ? true : false;
 }
+
+bool Inputs::inputReceived() { return _keyBuffer != 0; }
