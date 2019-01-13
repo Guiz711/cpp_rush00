@@ -6,7 +6,6 @@
 # include "Inputs.hpp"
 # include "Time.hpp"
 # include "Log.hpp"
-# include "GameLoop.hpp"
 
 enum Collision
 {
@@ -17,7 +16,7 @@ enum Collision
 	UI = 1 << 3
 };
 
-class AEntity{
+class AEntity {
   protected:
     std::string    	*_sprite;
     bool            _isAlive;

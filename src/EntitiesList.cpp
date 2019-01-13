@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 12:33:22 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 09:13:44 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 12:28:19 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ void			EntitiesList::removeEntity(EntityLink *link)
 {
 	if (link->prev)
 		link->prev->next = link->next;
+	else
+		_list = link->next;
 	if (link->next)
 		link->next->prev = link->prev;
 	delete link->entity;

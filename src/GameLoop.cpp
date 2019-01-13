@@ -1,9 +1,10 @@
 #include "GameLoop.hpp"
-#include "Player.hpp"
 
-EntitiesList *GameLoop::_list = NULL;
+EntitiesList	*GameLoop::_list = NULL;
+bool			GameLoop::_running = false;
 
-GameLoop::GameLoop( void ) {
+GameLoop::GameLoop( void )
+{
 	_list = new EntitiesList();
 	return;
 }
@@ -47,7 +48,7 @@ void GameLoop::checkAlive( void ){
 	while (tmp != NULL){
 		tmp2 = tmp->next;
 		if (tmp->entity->isAlive() == false){
-		_list->removeEntity(tmp);
+			_list->removeEntity(tmp);
 		}
 		tmp = tmp2;
 	}
@@ -58,18 +59,20 @@ void GameLoop::checkAlive( void ){
 }
 
 void GameLoop::startLoop( void ){
-	Player *player = new Player();
-	_list->addEntity(player);
-	while(1) {
+	_list->addEntity(new Game());
+	_running = true;
+	while(_running) {
 		_time.updateTime();
 		_inputs.updateInputs();
+		Log::instance().logError("Game erased");
 		_update();
 		_physics.setList(_list);
 		_physics.checkCollisions();
 		checkAlive();
 		_renderer.renderScreen(_list->getList());
 	}
-	// delete _list;
+	_list->destroyList();
+	delete _list;
 	return;
 }
 
@@ -83,3 +86,5 @@ void	GameLoop::addEntity(AEntity *entity)
 
 	_list->addEntity(entity);
 }
+
+void			GameLoop::quitGame(void) { _running = false; }

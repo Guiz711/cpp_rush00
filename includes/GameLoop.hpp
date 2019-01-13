@@ -1,12 +1,13 @@
 #ifndef GAMELOOP_HPP
 # define GAMELOOP_HPP
 
-#include "Renderer.hpp"
 #include "AEntity.hpp"
+#include "Renderer.hpp"
 #include "EntitiesList.hpp"
 #include "Inputs.hpp"
 #include "Physics.hpp"
 #include "Time.hpp"
+#include "Game.hpp"
 
 class GameLoop{
   private:
@@ -15,6 +16,7 @@ class GameLoop{
     Inputs              _inputs;
     Physics             _physics;
     Time           		_time;
+	static bool			_running;
 
     void _update( void );
 
@@ -26,7 +28,8 @@ class GameLoop{
 
     GameLoop &operator=(const GameLoop &rhs);
 
-	EntitiesList *getList( void ) const ;
+	EntitiesList 	*getList( void ) const ;
+	static void		quitGame(void);
 
     void checkAlive( void );
     void startLoop( void );

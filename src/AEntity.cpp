@@ -1,7 +1,4 @@
-#include "../includes/AEntity.hpp"
-#include "../includes/Log.hpp"
-#include <iostream>
-#include "Log.hpp"
+#include "AEntity.hpp"
 
 AEntity::AEntity( void ):
 	_xPos(0),

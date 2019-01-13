@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 15:16:10 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 10:34:35 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 11:34:22 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,16 @@ Renderer&	Renderer::operator=(const Renderer& rhs)
 
 void		Renderer::renderScreen(EntityLink *entities)
 {
-	AEntity	*entity;
+	AEntity		*entity;
+	std::string *sprite;
+
 	werase(stdscr);
 	while (entities)
 	{
 		entity = entities->entity;
-		placeSprite(entity->getXPos(), entity->getYPos(), entity->getSprite(), entity->getColor());
+		sprite = entity->getSprite();
+		if(sprite)
+			placeSprite(entity->getXPos(), entity->getYPos(), sprite, entity->getColor());
 		entities = entities->next;
 	}
 	wrefresh(stdscr);
