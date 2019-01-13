@@ -3,13 +3,23 @@
 
 #include "GameLoop.hpp"
 
-class Decors{
+class Decors: public AEntity{
     private:
-        std::string     sprite;
+        static std::string const  spritePool[4][6];
+        bool                      _footer;
 
-    
+        Decors( void ); 
 
-}
+    public:
+        Decors( bool footer, float Xpos, float Ypos );
+        Decors(Decors &src);
+        ~Decors(void);
 
+        Decors &operator=(Decors const &rhs);
 
-#endif;
+        virtual void onCollision(AEntity *collider);
+        virtual void 		update( void );
+
+};
+
+#endif
