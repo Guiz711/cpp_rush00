@@ -53,9 +53,5 @@ void SimpleEnemy::update(void){
 
 	_velocity[0] = -10;
 
-//CONDITION RANDOM
-		//GameLoop::addEntity(new Projectile(_xPos - 1, _yPos, _collisionMask, 20));
-
 	_xPos += _velocity[0] * (float)Time::getDeltaTime();
-
 }
