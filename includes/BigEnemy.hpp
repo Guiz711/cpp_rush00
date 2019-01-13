@@ -12,6 +12,9 @@ class BigEnemy: public AEnemy{
 
     BigEnemy &operator=( BigEnemy const &rhs);
     virtual void update( void );
+
+  private:
+    double    _lastSpawn;
 };
 
 #endif

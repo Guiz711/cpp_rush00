@@ -13,6 +13,7 @@ BigEnemy::BigEnemy( void ): AEnemy(){
   _velocity[0] = 0;
   _velocity[1] = 0;
   _life = 3;
+  _lastSpawn = Time::getTimeSinceStartup();
 }
 
 BigEnemy::BigEnemy( float posX, float posY ): AEnemy(posX, posY){
@@ -26,6 +27,7 @@ BigEnemy::BigEnemy( float posX, float posY ): AEnemy(posX, posY){
   _velocity[0] = 0;
   _velocity[1] = 0;
   _life = 3;
+  _lastSpawn = Time::getTimeSinceStartup();
 }
 
 BigEnemy::BigEnemy( BigEnemy const &src ): AEnemy(){
@@ -38,6 +40,7 @@ BigEnemy::BigEnemy( BigEnemy const &src ): AEnemy(){
   _life = src.getLife();
   _velocity[0] = src.getVelocity0();
   _velocity[1] = src.getVelocity1();
+  _lastSpawn = Time::getTimeSinceStartup();
 }
 
 BigEnemy::~BigEnemy( void ){
@@ -54,6 +57,7 @@ BigEnemy &BigEnemy::operator=( BigEnemy const &rhs){
   _life = rhs.getLife();
   _velocity[0] = rhs.getVelocity0();
   _velocity[1] = rhs.getVelocity1();
+  _lastSpawn = Time::getTimeSinceStartup();
   return *this;
 }
 
@@ -67,7 +71,8 @@ void BigEnemy::update(void){
 
   time = Time::getTimeSinceStartup();
 
-  if ( 0 < std::fmod(time,4) && std::fmod(time,4) < 0.05){
+    if ( time - _lastSpawn > 5 ){
+    _lastSpawn = time;
 		GameLoop::addEntity(new Projectile(_xPos - 1, _yPos + 1, _collisionMask, 20));
     GameLoop::addEntity(new Projectile(_xPos - 1, _yPos + 3, _collisionMask, 20));
   }

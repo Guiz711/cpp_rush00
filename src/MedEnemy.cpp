@@ -10,7 +10,8 @@ MedEnemy::MedEnemy( void ): AEnemy(){
   _sprite[3] = "";
   _velocity[0] = 0;
   _velocity[1] = 0;
-  _life = 1;
+  _life = 2;
+  _lastSpawn = Time::getTimeSinceStartup();
 }
 
 MedEnemy::MedEnemy( float posX, float posY ): AEnemy(posX, posY){
@@ -21,7 +22,8 @@ MedEnemy::MedEnemy( float posX, float posY ): AEnemy(posX, posY){
   _sprite[3] = "";
   _velocity[0] = 0;
   _velocity[1] = 0;
-  _life = 1;
+  _life = 2;
+  _lastSpawn = Time::getTimeSinceStartup();
 }
 
 MedEnemy::MedEnemy( MedEnemy const &src ): AEnemy(){
@@ -34,6 +36,7 @@ MedEnemy::MedEnemy( MedEnemy const &src ): AEnemy(){
   _life = src.getLife();
   _velocity[0] = src.getVelocity0();
   _velocity[1] = src.getVelocity1();
+  _lastSpawn = Time::getTimeSinceStartup();
 }
 
 MedEnemy::~MedEnemy( void ){
@@ -50,6 +53,7 @@ MedEnemy &MedEnemy::operator=( MedEnemy const &rhs){
   _life = rhs.getLife();
   _velocity[0] = rhs.getVelocity0();
   _velocity[1] = rhs.getVelocity1();
+  _lastSpawn = Time::getTimeSinceStartup();
   return *this;
 }
 
@@ -63,8 +67,10 @@ void MedEnemy::update(void){
 
   time = Time::getTimeSinceStartup();
 
-  if ( 0 < std::fmod(time,5) && std::fmod(time,5) < 0.05)
+  if ( time - _lastSpawn > 5 ){
 		GameLoop::addEntity(new Projectile(_xPos - 1, _yPos + 1, _collisionMask, 20));
+    _lastSpawn = time;
+  }
 
 	_xPos += _velocity[0] * (float)Time::getDeltaTime();
 }

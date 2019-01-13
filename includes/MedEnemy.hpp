@@ -12,6 +12,9 @@ class MedEnemy: public AEnemy{
 
     MedEnemy &operator=( MedEnemy const &rhs);
     virtual void update( void );
+  
+  private:
+    double  _lastSpawn;
 };
 
 #endif
