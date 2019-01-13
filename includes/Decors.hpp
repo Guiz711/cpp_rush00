@@ -5,7 +5,7 @@
 
 class Decors: public AEntity{
     private:
-        static std::string const  spritePool[4][6];
+        static std::string const  spritePool[4][7];
         bool                      _footer;
 
         Decors( void ); 

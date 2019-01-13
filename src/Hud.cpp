@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 16:29:58 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 18:34:46 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 18:53:58 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ Hud::Hud(void):
 	_startTime(Time::getTimeSinceStartup())
 {
 	Log::instance().log("init hud");
-	_sprite = new std::string[3];
-	_sprite[0] = " ` ` `  99999 ";
-	_sprite[1] = " ============ ";
-	_sprite[3] = "";
+	_sprite = new std::string[2];
+	_sprite[0] = " + + +  99999 ";
+	_sprite[1] = "";
 
 	_collisionMask = UI;
 
@@ -45,10 +44,9 @@ Hud::Hud(Hud const &src):
 Hud::Hud( float posX, float posY ):
 	AEntity(posX, posY)
 {
-	_sprite = new std::string[3];
-	_sprite[0] = " ` ` `  99999 ";
-	_sprite[1] = " ============ ";
-	_sprite[3] = "";
+	_sprite = new std::string[2];
+	_sprite[0] = " + + +  99999 ";
+	_sprite[1] = "";
 
 	_collisionMask = UI;
 
@@ -87,7 +85,7 @@ void	Hud::updateLife(int hp)
   	Log::instance().log(std::to_string(hp));
 	while(hp--)
 	{
-		shp += "` ";
+		shp += "+ ";
 		len -= 2;
 	}
 	while (len-- > 0)

@@ -66,10 +66,10 @@ void Projectile::update( void ){
 void Projectile::onCollision(AEntity *collider){
 	int destroy;
 
-	if (_collisionMask & PLAYER)
+	if (_collisionMask & PLAYER_PROJECTILE)
 		destroy = collider->getCollisionMask() & (ENEMIES | LAND);
 	else
-		destroy = collider->getCollisionMask() & (PLAYER | LAND);
+		destroy = collider->getCollisionMask() & (PLAYER | LAND | PLAYER_PROJECTILE);
 	if(destroy)
   		setNotAlive();
   return;

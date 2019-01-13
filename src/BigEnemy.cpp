@@ -10,10 +10,10 @@ BigEnemy::BigEnemy( void ): AEnemy(){
   _sprite[3] = "=|o{";
   _sprite[4] = "  \\ ";
   _sprite[5] = "";
-  _velocity[0] = 0;
+  _velocity[0] = -10;
   _velocity[1] = 0;
   _life = 3;
-  _lastSpawn = Time::getTimeSinceStartup();
+  _lastSpawn = Time::getTimeSinceStartup() - 4;
 }
 
 BigEnemy::BigEnemy( float posX, float posY ): AEnemy(posX, posY){
@@ -24,10 +24,10 @@ BigEnemy::BigEnemy( float posX, float posY ): AEnemy(posX, posY){
   _sprite[3] = "=|o{";
   _sprite[4] = "  \\ ";
   _sprite[5] = "";
-  _velocity[0] = 0;
+  _velocity[0] = -10;
   _velocity[1] = 0;
   _life = 3;
-  _lastSpawn = Time::getTimeSinceStartup();
+  _lastSpawn = Time::getTimeSinceStartup() - 4;
 }
 
 BigEnemy::BigEnemy( BigEnemy const &src ): AEnemy(){
@@ -63,11 +63,6 @@ BigEnemy &BigEnemy::operator=( BigEnemy const &rhs){
 
 void BigEnemy::update(void){
   double    time;
-
-  _velocity[0] = 0;
-	_velocity[1] = 0;
-
-	_velocity[0] = -15;
 
   time = Time::getTimeSinceStartup();
 

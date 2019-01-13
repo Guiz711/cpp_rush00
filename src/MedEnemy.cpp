@@ -8,10 +8,10 @@ MedEnemy::MedEnemy( void ): AEnemy(){
   _sprite[1] = "-X#{";
   _sprite[2] = "  \\ ";
   _sprite[3] = "";
-  _velocity[0] = 0;
+  _velocity[0] = -20;
   _velocity[1] = 0;
   _life = 2;
-  _lastSpawn = Time::getTimeSinceStartup();
+  _lastSpawn = Time::getTimeSinceStartup() - 2.5;
 }
 
 MedEnemy::MedEnemy( float posX, float posY ): AEnemy(posX, posY){
@@ -20,10 +20,10 @@ MedEnemy::MedEnemy( float posX, float posY ): AEnemy(posX, posY){
   _sprite[1] = "-X#{";
   _sprite[2] = "  \\ ";
   _sprite[3] = "";
-  _velocity[0] = 0;
+  _velocity[0] = -20;
   _velocity[1] = 0;
   _life = 2;
-  _lastSpawn = Time::getTimeSinceStartup();
+  _lastSpawn = Time::getTimeSinceStartup() - 2.5;
 }
 
 MedEnemy::MedEnemy( MedEnemy const &src ): AEnemy(){
@@ -60,15 +60,12 @@ MedEnemy &MedEnemy::operator=( MedEnemy const &rhs){
 void MedEnemy::update(void){
   double  time;
   
-  _velocity[0] = 0;
-	_velocity[1] = 0;
 
-	_velocity[0] = -13;
 
   time = Time::getTimeSinceStartup();
 
-  if ( time - _lastSpawn > 5 ){
-		GameLoop::addEntity(new Projectile(_xPos - 1, _yPos + 1, _collisionMask, 20));
+  if ( time - _lastSpawn > 2 ){
+		GameLoop::addEntity(new Projectile(_xPos - 1, _yPos + 1, _collisionMask, 35));
     _lastSpawn = time;
   }
 

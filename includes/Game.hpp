@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 10:38:29 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 11:47:22 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 19:02:15 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ class Game: public AEntity
 		Game&	operator=(const Game& rhs);
 
 		virtual void	update( void );
-    virtual void	onCollision( void );
+    	virtual void	onCollision( void );
 
 	private:
-
+		int				_spawnYMin;
+		int				_spawnYMax;
 		void			init();
 };
 

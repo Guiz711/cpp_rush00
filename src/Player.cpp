@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 09:50:52 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 18:01:30 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 19:35:18 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,8 @@ Player::Player(Player const &src):
 }
 
 Player::Player( float posX, float posY ):
-	AEntity(posX, posY),
-	_hud(new Hud(GameLoop::getBoardWidth() - 14, 0))
-	{
+	AEntity(posX, posY)
+{
 	_lastMove = 0;
 
 	_velocity[0] = 0;
@@ -74,6 +73,9 @@ Player::Player( float posX, float posY ):
 
 	_color = COLOR_GREEN;
 	_life = 3;
+
+	_hud = new Hud(GameLoop::getBoardWidth() - 12, 0);
+	GameLoop::addEntity(_hud);
 }
 
 Player::~Player(void) {}
@@ -96,22 +98,39 @@ void	Player::update(void)
 {
 	double	time = Time::getTimeSinceStartup();
 
+	// if (Inputs::getKeyDown(INP_UP))
+	// 	_velocity[1] = _velocity[1] > -_yMaxSpeed ? _velocity[1] - _yMaxSpeed : -_yMaxSpeed;
+	// if (Inputs::getKeyDown(INP_DOWN))
+	// 	_velocity[1] = _velocity[1] < _yMaxSpeed ? _velocity[1] + _yMaxSpeed : _yMaxSpeed;
+	// if (Inputs::getKeyDown(INP_LEFT))
+	// 	_velocity[0] = _velocity[0] > -_xMaxSpeed ? _velocity[0] - _xMaxSpeed : -_xMaxSpeed;
+	// if (Inputs::getKeyDown(INP_RIGHT))
+	// 	_velocity[0] = _velocity[0] < _xMaxSpeed ? _velocity[0] + _xMaxSpeed : _xMaxSpeed;
+	// if (Inputs::getKeyDown(INP_SPACE) && time - _lastMove >= 0.5)
+	// {
+	// 	_lastMove = time;
+	// 	GameLoop::addEntity(new Projectile(_xPos + 4, _yPos + 1, _collisionMask, 20));
+	// }
+
+	_velocity[0] = 0;
+	_velocity[1] = 0;
+
 	if (Inputs::getKeyDown(INP_UP))
-		_velocity[1] = _velocity[1] > -_yMaxSpeed ? _velocity[1] - _yMaxSpeed : -_yMaxSpeed;
+		_velocity[1] = -1;
 	if (Inputs::getKeyDown(INP_DOWN))
-		_velocity[1] = _velocity[1] < _yMaxSpeed ? _velocity[1] + _yMaxSpeed : _yMaxSpeed;
+		_velocity[1] = 1;
 	if (Inputs::getKeyDown(INP_LEFT))
-		_velocity[0] = _velocity[0] > -_xMaxSpeed ? _velocity[0] - _xMaxSpeed : -_xMaxSpeed;
+		_velocity[0] = -2;
 	if (Inputs::getKeyDown(INP_RIGHT))
-		_velocity[0] = _velocity[0] < _xMaxSpeed ? _velocity[0] + _xMaxSpeed : _xMaxSpeed;
-	if (Inputs::getKeyDown(INP_SPACE) && time - _lastMove >= 0.5)
+		_velocity[0] = 2;
+	if (Inputs::getKeyDown(INP_SPACE) && time - _lastMove >= 0.2)
 	{
 		_lastMove = time;
-		GameLoop::addEntity(new Projectile(_xPos + 4, _yPos + 1, _collisionMask, 20));
+		GameLoop::addEntity(new Projectile(_xPos + 4, _yPos + 1, _collisionMask, 25));
 	}
 
-	_xPos += _velocity[0] * Time::getDeltaTime();
-	_yPos += _velocity[1] * Time::getDeltaTime();
+	_xPos += _velocity[0];
+	_yPos += _velocity[1];
 
 	_xPos = _xPos < 0 ? 0 : _xPos;
 	_xPos = _xPos >= GameLoop::getBoardWidth() - 4 ? GameLoop::getBoardWidth() - 4 : _xPos;

@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 15:16:10 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 16:59:08 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 19:23:42 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,8 @@ void		Renderer::placeSprite(int x, int y, std::string *sprite, chtype color)
 	init_pair(1, color, COLOR_BLACK);
 	for (int v = 0; sprite[v][0]; ++v)
 		for (int u = 0; sprite[v][u]; ++u)
-		{
-			if (sprite[v][u] == '`')
-				mvwaddch(stdscr, y + v, x + u, ACS_DIAMOND | COLOR_PAIR(1));
-			else
+			if (sprite[v][u] != ' ')
 				mvwaddch(stdscr, y + v, x + u, sprite[v][u] | COLOR_PAIR(1));
-		}
 }
 
 int			Renderer::getScreenWidth(void) const { return _width; }

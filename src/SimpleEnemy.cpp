@@ -4,7 +4,7 @@ SimpleEnemy::SimpleEnemy( void ): AEnemy(){
   _sprite = new std::string[2];
   _sprite[0] = "<X=";
   _sprite[1] = "";
-  _velocity[0] = 0;
+  _velocity[0] = -30;
   _velocity[1] = 0;
   _life = 1;
 }
@@ -13,7 +13,7 @@ SimpleEnemy::SimpleEnemy( float posX, float posY ): AEnemy(posX, posY){
   _sprite = new std::string[2];
   _sprite[0] = "<X=";
   _sprite[1] = "";
-  _velocity[0] = 0;
+  _velocity[0] = -30;
   _velocity[1] = 0;
   _life = 1;
 }
@@ -48,10 +48,5 @@ SimpleEnemy &SimpleEnemy::operator=( SimpleEnemy const &rhs){
 }
 
 void SimpleEnemy::update(void){
-  _velocity[0] = 0;
-	_velocity[1] = 0;
-
-	_velocity[0] = -10;
-
 	_xPos += _velocity[0] * (float)Time::getDeltaTime();
 }
