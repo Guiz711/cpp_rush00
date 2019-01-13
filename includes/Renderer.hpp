@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 15:15:01 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/12 17:24:09 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 10:26:04 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Renderer
 		int			_width;
 		int			_height;
 
-		void		placeSprite(int x, int y, std::string *sprite);
+		void		placeSprite(int x, int y, std::string *sprite, chtype color);
 
 		Renderer(const Renderer& src);
 		Renderer&	operator=(const Renderer& rhs);

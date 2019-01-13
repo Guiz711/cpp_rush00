@@ -1,4 +1,5 @@
 #include "GameLoop.hpp"
+#include "Player.hpp"
 
 GameLoop::GameLoop( void ) {
 	return;
@@ -28,7 +29,7 @@ void GameLoop::_update( void ){
 
 	tmp = _list.getList();
 	while (tmp != NULL){
-	//  tmp->entity->update();
+	 	tmp->entity->update();
 		tmp = tmp->next;
 	}
 	//  tmp->entity->update();
@@ -47,13 +48,15 @@ void GameLoop::checkAlive( void ){
 		}
 		tmp = tmp2;
 	}
-	// if (tmp && tmp->entity->isAlive() == false){
+	// if (tmp->entity->isAlive() == false){
 	// 	_list.removeEntity(tmp);
 	// }
 	return;
 }
 
 void GameLoop::startLoop( void ){
+	Player *player = new Player();
+	_list.addEntity(player);
 	while(1) {
 		_time.updateTime();
 		_inputs.updateInputs();

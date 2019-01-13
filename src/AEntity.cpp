@@ -3,21 +3,26 @@
 #include <iostream>
 #include "Log.hpp"
 
-AEntity::AEntity( void ){
+AEntity::AEntity( void ):
+	_xPos(0),
+	_yPos(0),
+	_isAlive(true),
+	_color(COLOR_WHITE),
+	_collisionMask(NO_COLLISION),
+	_sprite(NULL)
+{
   Log::instance().log("Default Entity Constructor");
   return;
 }
 
-AEntity::AEntity( int xPos, int yPos ){
-  _xPos = xPos;
-  _yPos = yPos;
-
-  _sprite = new std::string[4];
-  _sprite[0] = "|\\";
-  _sprite[1] = "}=O>";
-  _sprite[2] = "|/ ";
-  _sprite[3] = "";
-
+AEntity::AEntity( int xPos, int yPos ):
+	_xPos(xPos),
+	_yPos(yPos),
+	_isAlive(true),
+	_color(COLOR_WHITE),
+	_collisionMask(NO_COLLISION),
+	_sprite(NULL)
+{
   Log::instance().log("Entity Parametric Constructor");
   return;
 }
@@ -63,7 +68,7 @@ std::string *AEntity::getSprite( void ) const {
   return _sprite;
 }
 
-std::string AEntity::getColor( void ) const {
+int AEntity::getColor( void ) const {
   return _color;
 }
 
