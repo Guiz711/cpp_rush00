@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 15:15:01 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 10:26:04 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 15:20:17 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class Renderer
 
 		void		renderScreen(EntityLink *entities);
 
-		int			getBoardX(void) const;
-		int			getBoardY(void) const;
+		int			getScreenWidth(void) const;
+		int			getScreenHeight(void) const;
 
 	private:
 		int			_width;

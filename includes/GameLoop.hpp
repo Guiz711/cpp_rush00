@@ -17,6 +17,8 @@ class GameLoop{
     Physics             _physics;
     Time           		_time;
 	static bool			_running;
+	static int			_boardWidth;
+	static int			_boardHeight;
 
     void _update( void );
 
@@ -30,6 +32,9 @@ class GameLoop{
 
 	EntitiesList 	*getList( void ) const ;
 	static void		quitGame(void);
+
+	static int		getBoardWidth(void);
+	static int		getBoardHeight(void);
 
     void checkAlive( void );
     void startLoop( void );

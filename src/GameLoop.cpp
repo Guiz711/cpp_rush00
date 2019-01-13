@@ -2,9 +2,13 @@
 
 EntitiesList	*GameLoop::_list = NULL;
 bool			GameLoop::_running = false;
+int				GameLoop::_boardWidth = 0;
+int				GameLoop::_boardHeight = 0;
 
 GameLoop::GameLoop( void )
 {
+	_boardHeight = _renderer.getScreenHeight();
+	_boardWidth = _renderer.getScreenWidth();
 	_list = new EntitiesList();
 	return;
 }
@@ -87,3 +91,6 @@ void	GameLoop::addEntity(AEntity *entity)
 }
 
 void			GameLoop::quitGame(void) { _running = false; }
+
+int		GameLoop::getBoardWidth(void) { return _boardWidth; }
+int		GameLoop::getBoardHeight(void) { return _boardHeight; }
