@@ -23,8 +23,8 @@ class GameLoop{
 	static int			_boardWidth;
 	static int			_boardHeight;
 
-    void _update( void );
-
+    void 	_update( void );
+	bool	isOutsideMap(int x, int y);
 
   public:
     GameLoop( void );

@@ -6,13 +6,16 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 09:50:52 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 14:53:15 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 15:58:13 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Player.hpp"
 #include "GameLoop.hpp"
 #include "Projectile.hpp"
+
+float		Player::_xMaxSpeed = 10;
+float		Player::_yMaxSpeed = 5;
 
 Player::Player(void):
 	AEntity()
@@ -86,28 +89,27 @@ void	Player::update(void)
 {
 	double	time = Time::getTimeSinceStartup();
 
-	_velocity[0] = 0;
-	_velocity[1] = 0;
-
-	if (Inputs::inputReceived() && time - _lastMove >= 0.2)
-	{
-		_lastMove = time;
-
 		if (Inputs::getKeyDown(INP_UP))
-			_velocity[1] -= 1;
+			_velocity[1] = _velocity[1] > -_yMaxSpeed ? _velocity[1] - _yMaxSpeed : -_yMaxSpeed;
 		if (Inputs::getKeyDown(INP_DOWN))
-			_velocity[1] += 1;
+			_velocity[1] = _velocity[1] < _yMaxSpeed ? _velocity[1] + _yMaxSpeed : _yMaxSpeed;
 		if (Inputs::getKeyDown(INP_LEFT))
-			_velocity[0] -= 3;
+			_velocity[0] = _velocity[0] > -_xMaxSpeed ? _velocity[0] - _xMaxSpeed : -_xMaxSpeed;
 		if (Inputs::getKeyDown(INP_RIGHT))
-			_velocity[0] += 3;
-		if (Inputs::getKeyDown(INP_SPACE))
+			_velocity[0] = _velocity[0] < _xMaxSpeed ? _velocity[0] + _xMaxSpeed : _xMaxSpeed;
+		if (Inputs::getKeyDown(INP_SPACE) && time - _lastMove >= 0.5)
+		{
+			_lastMove = time;
 			GameLoop::addEntity(new Projectile(_xPos + 4, _yPos + 1, _collisionMask, 20));
-	}
+		}
 
-	// Log::instance().logWarning(std::to_string(_velocity[1]));
-	_xPos += _velocity[0]; //* (float)Time::getDeltaTime();
-	_yPos += _velocity[1]; //* (float)Time::getDeltaTime();
+	_xPos += _velocity[0] * Time::getDeltaTime();
+	_yPos += _velocity[1] * Time::getDeltaTime();
+
+	_xPos = _xPos < 0 ? 0 : _xPos;
+	_xPos = _xPos >= GameLoop::getBoardWidth() - 4 ? GameLoop::getBoardWidth() - 4 : _xPos;
+	_yPos = _yPos < 0 ? 0 : _yPos;
+	_yPos = _yPos >= GameLoop::getBoardHeight() - 3 ? GameLoop::getBoardHeight() - 3 : _yPos;
 }
 
 void Player::onCollision(AEntity *collider)

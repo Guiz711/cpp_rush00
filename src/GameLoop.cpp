@@ -9,6 +9,8 @@ GameLoop::GameLoop( void )
 {
 	_boardHeight = _renderer.getScreenHeight();
 	_boardWidth = _renderer.getScreenWidth();
+	Log::instance().logError(std::to_string(_boardHeight));
+	Log::instance().logError(std::to_string(_boardWidth));
 	_list = new EntitiesList();
 	return;
 }
@@ -51,14 +53,12 @@ void GameLoop::checkAlive( void ){
 	tmp = _list->getList();
 	while (tmp != NULL){
 		tmp2 = tmp->next;
-		if (tmp->entity->isAlive() == false){
+		if (tmp->entity->isAlive() == false
+			|| isOutsideMap(tmp->entity->getXPos(), tmp->entity->getYPos())) {
 			_list->removeEntity(tmp);
 		}
 		tmp = tmp2;
 	}
-	// if (tmp->entity->isAlive() == false){
-	// 	_list.removeEntity(tmp);
-	// }
 	return;
 }
 
@@ -90,7 +90,17 @@ void	GameLoop::addEntity(AEntity *entity)
 	_list->addEntity(entity);
 }
 
-void			GameLoop::quitGame(void) { _running = false; }
+bool	GameLoop::isOutsideMap(int x, int y)
+{
+	if (x < 0 || x >= _boardWidth)
+		return true;
+	if (y < 0 || y >= _boardHeight)
+		return true;
+	return false;
+}
+
+
+void	GameLoop::quitGame(void) { _running = false; }
 
 int		GameLoop::getBoardWidth(void) { return _boardWidth; }
 int		GameLoop::getBoardHeight(void) { return _boardHeight; }
