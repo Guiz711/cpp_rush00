@@ -20,9 +20,9 @@ class AEntity {
   protected:
     std::string    	*_sprite;
     bool            _isAlive;
-    int     				_color;
+    int     		_color;
     float           _xPos;
-		float          	_yPos;
+	float          	_yPos;
     Collision       _collisionMask;
 
   public:
@@ -33,12 +33,12 @@ class AEntity {
 
     AEntity &operator=( AEntity const & rhs );
 
-    virtual void update( void ) = 0;
-    virtual void onCollision( void ) = 0;
+    virtual void update(void) = 0;
+    virtual void onCollision(AEntity *collider);
     int          getXPos( void ) const ;
     int          getYPos( void ) const ;
     std::string  *getSprite( void ) const ;
-    int  		 		 getColor( void ) const ;
+    int  		 getColor( void ) const ;
     bool         isAlive( void ) const ;
     Collision    getCollisionMask( void ) const ;
     void         setNotAlive( void );

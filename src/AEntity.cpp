@@ -53,6 +53,8 @@ AEntity &AEntity::operator=( AEntity const & rhs ){
   return *this;
 }
 
+void	AEntity::onCollision(AEntity *collider) {}
+
 int     AEntity::getXPos( void ) const {
   return _xPos;
 }

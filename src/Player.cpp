@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 09:50:52 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 11:01:24 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 12:40:34 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,11 +98,14 @@ void	Player::update(void)
 	_yPos += _velocity[1] * (float)Time::getDeltaTime();
 }
 
-void Player::onCollision(void)
+void Player::onCollision(AEntity *collider)
 {
-	_life -= 1;
-	if (_life <= 0){
-		setNotAlive();
+	if (collider->getCollisionMask() & (ENEMIES | LAND))
+	{
+		_life -= 1;
+		if (_life <= 0){
+			setNotAlive();
+		}
 	}
 	return;
 }

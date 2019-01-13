@@ -84,9 +84,8 @@ void Physics::checkCollisions( void ){
           if (mask1 & mask2){
             res = checkCollision(entity1, entity2);
             if (res == true ){
-             	entity1->onCollision();
-             	entity2->onCollision();
-                std::cout << "collision" << std::endl;
+             	entity1->onCollision(entity2);
+             	entity2->onCollision(entity1);
             }
           }
           if (list2->next != NULL){

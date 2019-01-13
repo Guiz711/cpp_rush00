@@ -62,8 +62,15 @@ void Projectile::update( void ){
   return;
 }
 
-void Projectile::onCollision( void ){
-  setNotAlive();
+void Projectile::onCollision(AEntity *collider){
+	int destroy;
+
+	if (_collisionMask & PLAYER)
+		destroy = collider->getCollisionMask() & (ENEMIES | LAND);
+	else
+		destroy = collider->getCollisionMask() & (PLAYER | LAND);
+	if(destroy)
+  		setNotAlive();
   return;
 }
 

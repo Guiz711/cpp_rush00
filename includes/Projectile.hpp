@@ -12,7 +12,7 @@ class Projectile: public AEntity{
     Projectile &operator=(Projectile const &rhs);
 
     virtual void update( void );
-    virtual void onCollision( void );
+    virtual void onCollision(AEntity *collider);
     float			   getVelocity0( void ) const ;
     float			   getVelocity1( void ) const ;
 
