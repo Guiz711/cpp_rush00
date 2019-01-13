@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 10:38:29 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 20:00:48 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 20:59:30 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,27 @@ class Game: public AEntity
 {
 	public:
 		Game(void);
-		Game(const Game& src);
 		~Game(void);
 
 		Game&	operator=(const Game& rhs);
 
 		virtual void	update( void );
-    	virtual void	onCollision( void );
 
 		void			die(void);
+		int				getSpawnMax( void ) const;
+		int				getSpawnMin( void ) const;
+		static bool		isGameOver(void);
 
 	private:
 		int					_spawnYMin;
 		int					_spawnYMax;
-		bool				_gameOver;
+		Player				*_player;
 		static std::string	_endScreen[7];
+		static bool			_gameOver;
 
 		void			init();
+
+		Game(const Game& src);
 };
 
 #endif

@@ -6,11 +6,12 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 09:50:52 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 19:35:18 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 20:41:07 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Player.hpp"
+# include "Player.hpp"
+# include "GameLoop.hpp"
 
 float		Player::_xMaxSpeed = 10;
 float		Player::_yMaxSpeed = 5;
@@ -78,7 +79,9 @@ Player::Player( float posX, float posY ):
 	GameLoop::addEntity(_hud);
 }
 
-Player::~Player(void) {}
+Player::~Player(void) {
+	_hud->kill();
+}
 
 Player&	Player::operator=(const Player& rhs){
 	_hud = rhs.getHud();

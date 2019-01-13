@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 17:49:02 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 14:49:19 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 21:02:24 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ class Inputs
 
 	private:
 		static int		_keyBuffer;
-		int				_bufferSize;
 
 		Inputs(const Inputs& src);
 		Inputs&	operator=(const Inputs& rhs);

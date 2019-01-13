@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 09:49:52 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 16:38:03 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 20:11:49 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PLAYER_HPP
 
 # include "AEntity.hpp"
-# include "GameLoop.hpp"
 # include "Hud.hpp"
 # include "Projectile.hpp"
 

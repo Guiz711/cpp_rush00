@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 15:16:10 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 19:50:07 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 20:22:08 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ Renderer::Renderer(void)
 
 Renderer::Renderer(const Renderer& src)
 {
+	_width = src.getScreenWidth();
+	_height = src.getScreenHeight();
 	return;
 }
 
@@ -37,6 +39,8 @@ Renderer::~Renderer(void)
 
 Renderer&	Renderer::operator=(const Renderer& rhs)
 {
+	_width = rhs.getScreenWidth();
+	_height = rhs.getScreenHeight();
 	return *this;
 }
 
@@ -59,7 +63,7 @@ void		Renderer::renderScreen(EntityLink *entities)
 
 void		Renderer::placeSprite(int x, int y, std::string *sprite, chtype color)
 {
-	int attr = 1;
+	int attr = COLOR_PAIR(1);
 
 	if(color == COLOR_GREEN)
 		attr = COLOR_PAIR(2);

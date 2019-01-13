@@ -6,13 +6,12 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 16:29:58 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 19:45:04 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 21:05:30 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Hud.hpp"
-//9 5
-//2 5
+
 Hud::Hud(void):
 	AEntity(),
 	_startTime(Time::getTimeSinceStartup())
@@ -72,7 +71,7 @@ void	Hud::update(void)
 
 	timeStr << (int)(Time::getTimeSinceStartup() - _startTime);
 	dest = timeStr.str();
-	for (int i = 0; i < 5 - dest.length(); i++)
+	for (size_t i = 0; i < 5 - dest.length(); i++)
 		dest = " " + dest;
 	_sprite[0].replace(8, 5, dest);	
 }
@@ -94,7 +93,7 @@ void	Hud::updateLife(int hp)
 	_sprite[0].replace(1, 6, shp);
 }
 
-void	Hud::updateScore(int score)
+void	Hud::kill(void)
 {
-
+	_isAlive = false;
 }

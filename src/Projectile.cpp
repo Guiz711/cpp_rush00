@@ -1,5 +1,6 @@
 #include "Projectile.hpp"
 #include "Time.hpp"
+# include "Game.hpp"
 
 Projectile::Projectile( void ): AEntity(){
   _sprite = new std::string[2];
@@ -59,8 +60,11 @@ Projectile &Projectile::operator=(Projectile const &rhs){
 }
 
 void Projectile::update( void ){
-  _xPos += _velocity[0] * (float)Time::getDeltaTime();
-  return;
+	if (Game::isGameOver())
+		_isAlive = false;
+
+	_xPos += _velocity[0] * (float)Time::getDeltaTime();
+	return;
 }
 
 void Projectile::onCollision(AEntity *collider){

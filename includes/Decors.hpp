@@ -17,9 +17,7 @@ class Decors: public AEntity{
 
         Decors &operator=(Decors const &rhs);
 
-        virtual void onCollision(AEntity *collider);
         virtual void 		update( void );
-
 };
 
 #endif

@@ -6,7 +6,7 @@
 #    By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/19 14:03:15 by jgourdin          #+#    #+#              #
-#    Updated: 2019/01/13 18:37:08 by gmichaud         ###   ########.fr        #
+#    Updated: 2019/01/13 21:05:01 by gmichaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ LIBS = -lncurses
 
 CC = clang++
 
-CFLAGS = #-Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC_PATH = src
 

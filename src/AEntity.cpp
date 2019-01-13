@@ -1,23 +1,23 @@
 #include "AEntity.hpp"
 
 AEntity::AEntity( void ):
-	_xPos(0),
-	_yPos(0),
+	_sprite(NULL),
 	_isAlive(true),
 	_color(COLOR_WHITE),
-	_collisionMask(NO_COLLISION),
-	_sprite(NULL)
+	_xPos(0),
+	_yPos(0),
+	_collisionMask(NO_COLLISION)
 {
   return;
 }
 
 AEntity::AEntity( float xPos, float yPos ):
-	_xPos(xPos),
-	_yPos(yPos),
+	_sprite(NULL),
 	_isAlive(true),
 	_color(COLOR_WHITE),
-	_collisionMask(NO_COLLISION),
-	_sprite(NULL)
+	_xPos(xPos),
+	_yPos(yPos),
+	_collisionMask(NO_COLLISION)
 {
   return;
 }
@@ -47,7 +47,9 @@ AEntity &AEntity::operator=( AEntity const & rhs ){
   return *this;
 }
 
-void	AEntity::onCollision(AEntity *collider) {}
+void	AEntity::onCollision(AEntity *collider) {
+	collider = NULL;
+}
 
 int     AEntity::getXPos( void ) const {
   return _xPos;

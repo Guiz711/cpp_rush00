@@ -67,9 +67,12 @@ void BigEnemy::update(void){
   time = Time::getTimeSinceStartup();
 
     if ( time - _lastSpawn > 5 ){
-    _lastSpawn = time;
-		GameLoop::addEntity(new Projectile(_xPos - 1, _yPos + 1, _collisionMask, 20));
-    GameLoop::addEntity(new Projectile(_xPos - 1, _yPos + 3, _collisionMask, 20));
-  }
+		_lastSpawn = time;
+			GameLoop::addEntity(new Projectile(_xPos - 1, _yPos + 1, _collisionMask, 20));
+		GameLoop::addEntity(new Projectile(_xPos - 1, _yPos + 3, _collisionMask, 20));
+	}
 	_xPos += _velocity[0] * (float)Time::getDeltaTime();
+
+	if (Game::isGameOver())
+		_isAlive = false;
 }

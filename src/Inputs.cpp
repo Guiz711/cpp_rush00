@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 17:49:04 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 14:54:27 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 21:02:47 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 int	Inputs::_keyBuffer = 0;
 
-Inputs::Inputs(void):
-	_bufferSize(sizeof(_keyBuffer) / sizeof(int))
+Inputs::Inputs(void)
 {
 	if (!stdscr)
 		initscr();
@@ -26,8 +25,8 @@ Inputs::Inputs(void):
 	nodelay(stdscr, TRUE);
 }
 
-Inputs::Inputs(const Inputs& src) {}
-Inputs&	Inputs::operator=(const Inputs& rhs) { return *this; }
+Inputs::Inputs(const Inputs& src) { (void)src; }
+Inputs&	Inputs::operator=(const Inputs& rhs) { (void)rhs; return *this; }
 
 Inputs::~Inputs(void)
 {

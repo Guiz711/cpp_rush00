@@ -1,4 +1,5 @@
 #include "SimpleEnemy.hpp"
+#include "Game.hpp"
 
 SimpleEnemy::SimpleEnemy( void ): AEnemy(){
   _sprite = new std::string[2];
@@ -49,4 +50,7 @@ SimpleEnemy &SimpleEnemy::operator=( SimpleEnemy const &rhs){
 
 void SimpleEnemy::update(void){
 	_xPos += _velocity[0] * (float)Time::getDeltaTime();
+
+	if (Game::isGameOver())
+		_isAlive = false;
 }

@@ -58,16 +58,16 @@ MedEnemy &MedEnemy::operator=( MedEnemy const &rhs){
 }
 
 void MedEnemy::update(void){
-  double  time;
+  	double  time;
   
+  	time = Time::getTimeSinceStartup();
 
-
-  time = Time::getTimeSinceStartup();
-
-  if ( time - _lastSpawn > 2 ){
+	if ( time - _lastSpawn > 2 ){
 		GameLoop::addEntity(new Projectile(_xPos - 1, _yPos + 1, _collisionMask, 35));
-    _lastSpawn = time;
-  }
-
+		_lastSpawn = time;
+	}
 	_xPos += _velocity[0] * (float)Time::getDeltaTime();
+
+	if (Game::isGameOver())
+		_isAlive = false;
 }

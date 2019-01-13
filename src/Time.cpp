@@ -16,8 +16,8 @@ Time::Time( void )
 }
 
 Time::Time( Time const & src ):
-	_startupTime(src.getStartupTime()),
-	_lastFrameTime(src.getLastFrameTime())
+	_lastFrameTime(src.getLastFrameTime()),
+	_startupTime(src.getStartupTime())
 {}
 
 Time::~Time( void ) {};

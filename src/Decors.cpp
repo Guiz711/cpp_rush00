@@ -114,12 +114,11 @@ Decors &Decors::operator=(Decors const &rhs){
     return *this;
 }
 
-void Decors::onCollision(AEntity *collider){
-	return;
-}
-
 void	Decors::update(void)
 {
+	if (Game::isGameOver())
+		_isAlive = false;
+
 	_xPos -= 10 * Time::getDeltaTime();
 
 	if (_xPos < 0)

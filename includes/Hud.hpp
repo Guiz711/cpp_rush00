@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 16:27:13 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 18:31:50 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 20:40:03 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Hud: public AEntity
 
 		virtual void 		update( void );
 		void 				updateLife(int hp);
-		void			   	updateScore(int score);
+		void				kill(void);
 
 	private:
 		double	_startTime;
