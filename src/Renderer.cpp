@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 15:16:10 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 11:34:22 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 15:35:33 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Renderer::Renderer(void)
 	if (!stdscr)
 		initscr();
 	curs_set(0);
-	getmaxyx(stdscr, _width, _height);
+	getmaxyx(stdscr, _height, _width);
 	start_color();
 }
 
@@ -61,5 +61,5 @@ void		Renderer::placeSprite(int x, int y, std::string *sprite, chtype color)
 			mvwaddch(stdscr, y + v, x + u, sprite[v][u] | COLOR_PAIR(1));
 }
 
-int			Renderer::getBoardX(void) const { return _width; }
-int			Renderer::getBoardY(void) const { return _height; }
+int			Renderer::getScreenWidth(void) const { return _width; }
+int			Renderer::getScreenHeight(void) const { return _height; }

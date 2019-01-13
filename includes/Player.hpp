@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 09:49:52 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 14:44:01 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 15:58:02 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,17 @@ class Player: public AEntity
 		Player&	operator=(const Player& rhs);
 
 		virtual void 		update( void );
-    virtual void 		onCollision(AEntity *collider);
-		int 						getLife( void ) const ;
-		float			   		getVelocity0( void ) const ;
-		float			   		getVelocity1( void ) const ;
+    	virtual void 		onCollision(AEntity *collider);
+		int 				getLife( void ) const ;
+		float			   	getVelocity0( void ) const ;
+		float			   	getVelocity1( void ) const ;
 
 	private:
-		float		_velocity[2];
-		int			_life;
-		double		_lastMove;
+		float				_velocity[2];
+		int					_life;
+		double				_lastMove;
+		static float		_xMaxSpeed;
+		static float		_yMaxSpeed;
 };
 
 #endif

@@ -19,11 +19,13 @@ class GameLoop{
     Renderer            _renderer;
     Inputs              _inputs;
     Physics             _physics;
-    Time           		  _time;
-	  static bool			    _running;
+    Time           		_time;
+	static bool			_running;
+	static int			_boardWidth;
+	static int			_boardHeight;
 
-    void _update( void );
-
+    void 	_update( void );
+	bool	isOutsideMap(int x, int y);
 
   public:
     GameLoop( void );
@@ -35,9 +37,12 @@ class GameLoop{
 	   EntitiesList 	*getList( void ) const ;
 	   static void		quitGame(void);
 
-     void checkAlive( void );
-     void startLoop( void );
-	   static void addEntity(AEntity *entity);
+	static int		getBoardWidth(void);
+	static int		getBoardHeight(void);
+
+    void checkAlive( void );
+    void startLoop( void );
+	static void addEntity(AEntity *entity);
 
 };
 
