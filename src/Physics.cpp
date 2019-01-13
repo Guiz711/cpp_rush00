@@ -53,6 +53,7 @@ bool checkCollision(AEntity *entity1, AEntity *entity2){
       for (int i2 = 0; sprite2[i2][0]; i2 += 1){
         for (int j2 = 0; sprite2[i2][j2]; j2 += 1){
           if ((yPos1 + i1 == yPos2 + i2) && (xPos1 + j1 == xPos2 + j2) && (sprite1[i1][j1] != ' ') && (sprite2[i2][j2] != ' '))
+           std::cout<< "true"<<std::endl;
             return true;
         }
       }
@@ -71,31 +72,31 @@ void Physics::checkCollisions( void ){
     Collision     mask2;
     bool          res;
 
-    list1 = _list->getList();
+  list1 = _list->getList();
 	if (!list1)
 		return;
-    entity1 = list1->entity;
-    while (list1->next != NULL){
-        mask1 = entity1->getCollisionMask();
-        list2 = list1->next;
-        entity2 = list2->entity;
-        while (entity2 != NULL){
-          mask2 = entity2->getCollisionMask();
-          if (mask1 & mask2){
-            res = checkCollision(entity1, entity2);
-            if (res == true ){
-             	entity1->onCollision(entity2);
-             	entity2->onCollision(entity1);
-            }
+  entity1 = list1->entity;
+  while (list1->next != NULL){
+      mask1 = entity1->getCollisionMask();
+      list2 = list1->next;
+      entity2 = list2->entity;
+      while (entity2 != NULL){
+        mask2 = entity2->getCollisionMask();
+        if (mask1 & mask2){
+          res = checkCollision(entity1, entity2);
+          if (res == true ){
+            entity1->onCollision(entity2);
+            entity2->onCollision(entity1);
           }
-          if (list2->next != NULL){
-            list2 = list2->next;
-            entity2 = list2->entity;
-          }
-          else
-            entity2 = NULL;
         }
-        list1 = list1->next;
-        entity1 = list1->entity;
-    }
+        if (list2->next != NULL){
+          list2 = list2->next;
+          entity2 = list2->entity;
+        }
+        else
+          entity2 = NULL;
+      }
+      list1 = list1->next;
+      entity1 = list1->entity;
+  }
 }

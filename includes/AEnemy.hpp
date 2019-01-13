@@ -16,11 +16,11 @@ class AEnemy: public AEntity{
     float getVelocity0( void ) const ;
     float	getVelocity1( void ) const ;
     virtual void update( void ) = 0;
-    virtual void onCollision( AEntity *entity );
+    void onCollision( AEntity *entity );
 
-  private:
+  protected:
     int       _life;
     int       _velocity[2];
-}
+};
 
 #endif

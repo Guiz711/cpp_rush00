@@ -6,9 +6,9 @@
 class Time{
   private:
     static double       _deltaTime;
-	static double		_timeSinceStartup;
+	  static double		    _timeSinceStartup;
     double              _lastFrameTime;
-	double				_startupTime;
+	  double			        _startupTime;
 
 	static double		getCurrentTime(void);
 
@@ -23,8 +23,8 @@ class Time{
 
     static double 		getDeltaTime(void);
     static double 		getTimeSinceStartup(void);
-	double 				getStartupTime(void) const;
-	double 				getLastFrameTime(void) const;
+	  double 				getStartupTime(void) const;
+	  double 				getLastFrameTime(void) const;
 };
 
 #endif

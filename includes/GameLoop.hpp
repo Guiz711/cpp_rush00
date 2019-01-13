@@ -8,6 +8,9 @@
 #include "Physics.hpp"
 #include "Time.hpp"
 #include "Game.hpp"
+#include "MedEnemy.hpp"
+#include "SimpleEnemy.hpp"
+#include "BigEnemy.hpp"
 
 class GameLoop{
   private:
@@ -15,8 +18,8 @@ class GameLoop{
     Renderer            _renderer;
     Inputs              _inputs;
     Physics             _physics;
-    Time           		_time;
-	static bool			_running;
+    Time           		  _time;
+	  static bool			    _running;
 
     void _update( void );
 
@@ -28,12 +31,12 @@ class GameLoop{
 
     GameLoop &operator=(const GameLoop &rhs);
 
-	EntitiesList 	*getList( void ) const ;
-	static void		quitGame(void);
+	   EntitiesList 	*getList( void ) const ;
+	   static void		quitGame(void);
 
-    void checkAlive( void );
-    void startLoop( void );
-	static void addEntity(AEntity *entity);
+     void checkAlive( void );
+     void startLoop( void );
+	   static void addEntity(AEntity *entity);
 
 };
 

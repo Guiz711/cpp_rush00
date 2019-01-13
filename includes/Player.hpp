@@ -27,10 +27,10 @@ class Player: public AEntity
 		Player&	operator=(const Player& rhs);
 
 		virtual void 		update( void );
-    	virtual void 		onCollision(AEntity *collider);
-		int 				getLife( void ) const ;
-		float			   	getVelocity0( void ) const ;
-		float			   	getVelocity1( void ) const ;
+    virtual void 		onCollision(AEntity *collider);
+		int 						getLife( void ) const ;
+		float			   		getVelocity0( void ) const ;
+		float			   		getVelocity1( void ) const ;
 
 	private:
 		float		_velocity[2];

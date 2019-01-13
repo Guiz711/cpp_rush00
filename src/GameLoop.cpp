@@ -64,7 +64,7 @@ void GameLoop::startLoop( void ){
 	while(_running) {
 		_time.updateTime();
 		_inputs.updateInputs();
-		Log::instance().logError("Game erased");
+	//	Log::instance().logError("Game erased");
 		_update();
 		_physics.setList(_list);
 		_physics.checkCollisions();
