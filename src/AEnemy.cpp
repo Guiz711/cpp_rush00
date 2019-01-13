@@ -1,6 +1,9 @@
 #include "AEnemy.hpp"
+#include "AEntity.hpp"
 
 AEnemy::AEnemy( void ) : AEntity(){
+  _collisionMask = ENEMIES;
+  _color = COLOR_RED;
   return;
 }
 
@@ -14,18 +17,21 @@ AEnemy::AEnemy( AEnemy const &src) : AEntity(){
   _life = src.getLife();
   _velocity[0] = src.getVelocity0();
   _velocity[1] = src.getVelocity1();
+  _collisionMask = src.getCollisionMask();
 }
 
 AEnemy::AEnemy( float posX, float posY ): AEntity(posX, posY){
   _xPos = posX;
   _yPos = posY;
+  _collisionMask = ENEMIES;
+  _color = COLOR_RED;
 }
 
 AEnemy::~AEnemy( void ){
   return;
 }
 
-AEnemy::AEnemy &operator=( AEnemy const &rhs){
+AEnemy &AEnemy::operator=( AEnemy const &rhs){
   _sprite= rhs.getSprite();
   _isAlive= rhs.isAlive();
   _color= rhs.getColor();
@@ -35,6 +41,7 @@ AEnemy::AEnemy &operator=( AEnemy const &rhs){
   _life = rhs.getLife();
   _velocity[0] = rhs.getVelocity0();
   _velocity[1] = rhs.getVelocity1();
+  _collisionMask = rhs.getCollisionMask();
   return *this;
 }
 
@@ -51,6 +58,13 @@ float	AEnemy::getVelocity1( void ) const {
 }
 
 
-void onCollision( AEntity *entity ){
-  
+void AEnemy::onCollision( AEntity *collider ){
+  if (collider->getCollisionMask() & (PLAYER | LAND))
+	{
+		_life -= 1;
+		if (_life <= 0){
+			setNotAlive();
+		}
+	}
+	return;
 }

@@ -27,7 +27,7 @@ class Game: public AEntity
 		Game&	operator=(const Game& rhs);
 
 		virtual void	update( void );
-    	virtual void	onCollision( void );
+    virtual void	onCollision( void );
 
 	private:
 

@@ -8,6 +8,9 @@
 #include "Physics.hpp"
 #include "Time.hpp"
 #include "Game.hpp"
+#include "MedEnemy.hpp"
+#include "SimpleEnemy.hpp"
+#include "BigEnemy.hpp"
 
 class GameLoop{
   private:
@@ -30,8 +33,8 @@ class GameLoop{
 
     GameLoop &operator=(const GameLoop &rhs);
 
-	EntitiesList 	*getList( void ) const ;
-	static void		quitGame(void);
+	   EntitiesList 	*getList( void ) const ;
+	   static void		quitGame(void);
 
 	static int		getBoardWidth(void);
 	static int		getBoardHeight(void);
