@@ -3,6 +3,7 @@
 
 AEnemy::AEnemy( void ) : AEntity(){
   _collisionMask = ENEMIES;
+  _color = COLOR_RED;
   return;
 }
 
@@ -23,6 +24,7 @@ AEnemy::AEnemy( float posX, float posY ): AEntity(posX, posY){
   _xPos = posX;
   _yPos = posY;
   _collisionMask = ENEMIES;
+  _color = COLOR_RED;
 }
 
 AEnemy::~AEnemy( void ){
