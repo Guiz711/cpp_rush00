@@ -1,8 +1,11 @@
 #ifndef AENTITY_HPP
 # define AENTITY_HPP
 
-#include <string>
-#include <ncurses.h>
+# include <string>
+# include <ncurses.h>
+# include "Inputs.hpp"
+# include "Time.hpp"
+# include "Log.hpp"
 
 enum Collision
 {
