@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 12:33:22 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 12:28:19 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 21:27:56 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 EntitiesList::EntitiesList(void):
 	_list(NULL)
 {
-	Log::instance().logWarning("EntitiesList Constructor");
 }
 
 EntitiesList::EntitiesList(const EntitiesList& src)
@@ -70,7 +69,6 @@ void			EntitiesList::clearList(void)
 	while (_list)
 	{
 		tmp = _list;
-		Log::instance().log(std::to_string(tmp->entity->getXPos()));
 		_list = _list->next;
 		delete tmp;
 	}

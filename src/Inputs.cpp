@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 17:49:04 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 21:02:47 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 21:27:58 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	Inputs::updateInputs(void)
 	else
 		_keyBuffer = 0;
 
-	// Log::instance().logError(std::to_string(key));	
 }
 
 bool	Inputs::getKeyDown(Keys keycode)

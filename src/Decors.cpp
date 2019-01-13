@@ -61,7 +61,6 @@ Decors::Decors( bool footer, float xPos, float yPos ): AEntity(xPos, yPos){
     int number;
 
     number = std::rand() % 4;
-    Log::instance().logWarning("number =" + spritePool[number][0]);
     _footer = footer;
     _collisionMask = LAND;
     _sprite = new std::string[7];

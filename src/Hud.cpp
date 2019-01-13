@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 16:29:58 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 21:05:30 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 21:27:57 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ Hud::Hud(void):
 	AEntity(),
 	_startTime(Time::getTimeSinceStartup())
 {
-	Log::instance().log("init hud");
 	_sprite = new std::string[2];
 	_sprite[0] = " + + +  99999 ";
 	_sprite[1] = "";
@@ -81,7 +80,6 @@ void	Hud::updateLife(int hp)
 	std::string	shp;
 	int			len = 6;
 
-  	Log::instance().log(std::to_string(hp));
 	while(hp--)
 	{
 		shp += "+ ";
@@ -89,7 +87,6 @@ void	Hud::updateLife(int hp)
 	}
 	while (len-- > 0)
 		shp += " ";
-  	Log::instance().log(shp);
 	_sprite[0].replace(1, 6, shp);
 }
 

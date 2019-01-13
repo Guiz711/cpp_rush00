@@ -81,7 +81,6 @@ void	GameLoop::addEntity(AEntity *entity)
 {
 	if (!_list)
 	{
-		Log::instance().logError("Entities List not initialised.");
 		return;
 	}
 

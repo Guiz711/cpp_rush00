@@ -12,7 +12,6 @@ Time::Time( void )
 	_startupTime = curTime;
 	_lastFrameTime = curTime;
 
-	Log::instance().log("Default Time Constructor");
 }
 
 Time::Time( Time const & src ):

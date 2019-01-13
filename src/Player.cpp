@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 09:50:52 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 20:41:07 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 21:27:58 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,6 @@ void Player::onCollision(AEntity *collider)
 {
 	if (collider->getCollisionMask() & (ENEMIES | LAND))
 	{
-  		// Log::instance().log("player collide " + std::to_string(Time::getTimeSinceStartup()));
 		_life -= 1;
 		_hud->updateLife(_life);
 		if (_life <= 0){
