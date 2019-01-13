@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 09:49:52 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 15:58:02 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 16:38:03 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "AEntity.hpp"
 # include "GameLoop.hpp"
+# include "Hud.hpp"
+# include "Projectile.hpp"
 
 class Player: public AEntity
 {
@@ -31,8 +33,10 @@ class Player: public AEntity
 		int 				getLife( void ) const ;
 		float			   	getVelocity0( void ) const ;
 		float			   	getVelocity1( void ) const ;
+		Hud					*getHud( void ) const;
 
 	private:
+		Hud					*_hud;
 		float				_velocity[2];
 		int					_life;
 		double				_lastMove;

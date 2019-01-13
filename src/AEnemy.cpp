@@ -59,12 +59,11 @@ float	AEnemy::getVelocity1( void ) const {
 
 
 void AEnemy::onCollision( AEntity *collider ){
-  if (collider->getCollisionMask() & (PLAYER | LAND))
+	if (collider->getCollisionMask() & (PLAYER_PROJECTILE))
 	{
 		_life -= 1;
-		if (_life <= 0){
-			setNotAlive();
-		}
 	}
+	if (_life <= 0 || collider->getCollisionMask() & (PLAYER))
+		setNotAlive();
 	return;
 }

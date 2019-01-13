@@ -9,8 +9,6 @@ GameLoop::GameLoop( void )
 {
 	_boardHeight = _renderer.getScreenHeight();
 	_boardWidth = _renderer.getScreenWidth();
-	Log::instance().logError(std::to_string(_boardHeight));
-	Log::instance().logError(std::to_string(_boardWidth));
 	_list = new EntitiesList();
 	return;
 }

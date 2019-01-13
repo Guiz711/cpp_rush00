@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Hud.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/12 11:47:24 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 16:57:54 by gmichaud         ###   ########.fr       */
+/*   Created: 2019/01/13 16:27:13 by gmichaud          #+#    #+#             */
+/*   Updated: 2019/01/13 18:31:50 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "GameLoop.hpp"
+#ifndef HUD_HPP
+# define HUD_HPP
 
-int main(void)
+# include <sstream>
+# include "AEntity.hpp"
+
+class Hud: public AEntity
 {
-	GameLoop loop;
+	public:
+		Hud(void);
+		Hud(float posX, float posY);
+		Hud(const Hud& src);
+		~Hud(void);
 
-	loop.startLoop();
-	return 0;
-}
+		Hud&	operator=(const Hud& rhs);
+
+		virtual void 		update( void );
+		void 				updateLife(int hp);
+		void			   	updateScore(int score);
+
+	private:
+		double	_startTime;
+};
+
+#endif

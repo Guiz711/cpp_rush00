@@ -8,7 +8,6 @@ AEntity::AEntity( void ):
 	_collisionMask(NO_COLLISION),
 	_sprite(NULL)
 {
-  Log::instance().log("Default Entity Constructor");
   return;
 }
 
@@ -20,12 +19,10 @@ AEntity::AEntity( float xPos, float yPos ):
 	_collisionMask(NO_COLLISION),
 	_sprite(NULL)
 {
-  Log::instance().log("Entity Parametric Constructor");
   return;
 }
 
 AEntity::AEntity( AEntity & src ){
-  Log::instance().log("Copy Entity Constructor");
   _sprite= src.getSprite();
   _isAlive= src.isAlive();
   _color= src.getColor();
@@ -36,14 +33,11 @@ AEntity::AEntity( AEntity & src ){
 }
 
 AEntity::~AEntity( void ){
-  Log::instance().log("Entity Destructor");
-
   delete [] _sprite;
   return;
 }
 
 AEntity &AEntity::operator=( AEntity const & rhs ){
-  Log::instance().log("Entity Operator =");
   _sprite= rhs.getSprite();
   _isAlive= rhs.isAlive();
   _color= rhs.getColor();

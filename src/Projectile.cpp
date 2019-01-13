@@ -17,6 +17,7 @@ Projectile::Projectile( float xPos, float yPos, Collision collisionMask, float s
   _velocity[1] = 0;
   _collisionMask = collisionMask;
   if (_collisionMask & PLAYER){
+	  _collisionMask = PLAYER_PROJECTILE;
       _velocity[0] = speed;
       _color = COLOR_GREEN;
   }
