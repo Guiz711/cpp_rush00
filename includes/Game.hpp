@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 10:38:29 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 19:02:15 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 20:00:48 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,14 @@ class Game: public AEntity
 		virtual void	update( void );
     	virtual void	onCollision( void );
 
+		void			die(void);
+
 	private:
-		int				_spawnYMin;
-		int				_spawnYMax;
+		int					_spawnYMin;
+		int					_spawnYMax;
+		bool				_gameOver;
+		static std::string	_endScreen[7];
+
 		void			init();
 };
 

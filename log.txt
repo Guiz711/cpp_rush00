@@ -1126,3 +1126,225 @@
 [20190113_193749]     LOG | + +   
 [20190113_193755]     LOG | 1
 [20190113_193755]     LOG | +     
+[20190113_194350]     LOG | Default Time Constructor
+[20190113_194350] WARNING | EntitiesList Constructor
+[20190113_194350] WARNING | number =                  
+[20190113_194350] WARNING | number =                  
+[20190113_194350] WARNING | number =                  
+[20190113_194350] WARNING | number =    *             
+[20190113_194350] WARNING | number =    *             
+[20190113_194350] WARNING | number =     ***          
+[20190113_194350] WARNING | number =     ***          
+[20190113_194350] WARNING | number =    *             
+[20190113_194350] WARNING | number =                  
+[20190113_194350] WARNING | number =                  
+[20190113_194350] WARNING | number =     ***          
+[20190113_194350] WARNING | number =                  
+[20190113_194350] WARNING | number =     ***          
+[20190113_194350] WARNING | number =    *             
+[20190113_194350] WARNING | number =                  
+[20190113_194350] WARNING | number =                  
+[20190113_194350] WARNING | number =                  
+[20190113_194350] WARNING | number =                  
+[20190113_194350] WARNING | number =     ***          
+[20190113_194350] WARNING | number =     ***          
+[20190113_194422]     LOG | Default Time Constructor
+[20190113_194422] WARNING | EntitiesList Constructor
+[20190113_194422] WARNING | number =                  
+[20190113_194422] WARNING | number =                  
+[20190113_194422] WARNING | number =                  
+[20190113_194422] WARNING | number =    *             
+[20190113_194422] WARNING | number =    *             
+[20190113_194422] WARNING | number =     ***          
+[20190113_194422] WARNING | number =     ***          
+[20190113_194422] WARNING | number =    *             
+[20190113_194422] WARNING | number =                  
+[20190113_194422] WARNING | number =                  
+[20190113_194422] WARNING | number =     ***          
+[20190113_194422] WARNING | number =                  
+[20190113_194422] WARNING | number =     ***          
+[20190113_194422] WARNING | number =    *             
+[20190113_194422] WARNING | number =                  
+[20190113_194422] WARNING | number =                  
+[20190113_194422] WARNING | number =                  
+[20190113_194422] WARNING | number =                  
+[20190113_194422] WARNING | number =     ***          
+[20190113_194422] WARNING | number =     ***          
+[20190113_194444]     LOG | 2
+[20190113_194444]     LOG | + +   
+[20190113_194450]     LOG | 1
+[20190113_194450]     LOG | +     
+[20190113_194450]     LOG | 0
+[20190113_194450]     LOG |       
+[20190113_194542]     LOG | Default Time Constructor
+[20190113_194542] WARNING | EntitiesList Constructor
+[20190113_194542] WARNING | number =                  
+[20190113_194542] WARNING | number =                  
+[20190113_194542] WARNING | number =                  
+[20190113_194542] WARNING | number =    *             
+[20190113_194542] WARNING | number =    *             
+[20190113_194542] WARNING | number =     ***          
+[20190113_194542] WARNING | number =     ***          
+[20190113_194542] WARNING | number =    *             
+[20190113_194542] WARNING | number =                  
+[20190113_194542] WARNING | number =                  
+[20190113_194542] WARNING | number =     ***          
+[20190113_194542] WARNING | number =                  
+[20190113_194542] WARNING | number =     ***          
+[20190113_194542] WARNING | number =    *             
+[20190113_194542] WARNING | number =                  
+[20190113_194542] WARNING | number =                  
+[20190113_194542] WARNING | number =                  
+[20190113_194542] WARNING | number =                  
+[20190113_194542] WARNING | number =     ***          
+[20190113_194542] WARNING | number =     ***          
+[20190113_194600]     LOG | 2
+[20190113_194600]     LOG | + +   
+[20190113_194600]     LOG | 1
+[20190113_194600]     LOG | +     
+[20190113_194600]     LOG | 0
+[20190113_194600]     LOG |       
+[20190113_194619]     LOG | Default Time Constructor
+[20190113_194619] WARNING | EntitiesList Constructor
+[20190113_194619] WARNING | number =                  
+[20190113_194619] WARNING | number =                  
+[20190113_194619] WARNING | number =                  
+[20190113_194619] WARNING | number =    *             
+[20190113_194619] WARNING | number =    *             
+[20190113_194619] WARNING | number =     ***          
+[20190113_194619] WARNING | number =     ***          
+[20190113_194619] WARNING | number =    *             
+[20190113_194619] WARNING | number =                  
+[20190113_194619] WARNING | number =                  
+[20190113_194619] WARNING | number =     ***          
+[20190113_194619] WARNING | number =                  
+[20190113_194619] WARNING | number =     ***          
+[20190113_194619] WARNING | number =    *             
+[20190113_194619] WARNING | number =                  
+[20190113_194619] WARNING | number =                  
+[20190113_194619] WARNING | number =                  
+[20190113_194619] WARNING | number =                  
+[20190113_194619] WARNING | number =     ***          
+[20190113_194619] WARNING | number =     ***          
+[20190113_194633]     LOG | Default Time Constructor
+[20190113_194633] WARNING | EntitiesList Constructor
+[20190113_194633] WARNING | number =                  
+[20190113_194633] WARNING | number =                  
+[20190113_194633] WARNING | number =                  
+[20190113_194633] WARNING | number =    *             
+[20190113_194633] WARNING | number =    *             
+[20190113_194633] WARNING | number =     ***          
+[20190113_194633] WARNING | number =     ***          
+[20190113_194633] WARNING | number =    *             
+[20190113_194633] WARNING | number =                  
+[20190113_194633] WARNING | number =                  
+[20190113_194633] WARNING | number =     ***          
+[20190113_194633] WARNING | number =                  
+[20190113_194633] WARNING | number =     ***          
+[20190113_194633] WARNING | number =    *             
+[20190113_194633] WARNING | number =                  
+[20190113_194633] WARNING | number =                  
+[20190113_194633] WARNING | number =                  
+[20190113_194633] WARNING | number =                  
+[20190113_194633] WARNING | number =     ***          
+[20190113_194633] WARNING | number =     ***          
+[20190113_194700]     LOG | Default Time Constructor
+[20190113_194700] WARNING | EntitiesList Constructor
+[20190113_194700] WARNING | number =                  
+[20190113_194700] WARNING | number =                  
+[20190113_194700] WARNING | number =                  
+[20190113_194700] WARNING | number =    *             
+[20190113_194700] WARNING | number =    *             
+[20190113_194700] WARNING | number =     ***          
+[20190113_194700] WARNING | number =     ***          
+[20190113_194700] WARNING | number =    *             
+[20190113_194700] WARNING | number =                  
+[20190113_194700] WARNING | number =                  
+[20190113_194700] WARNING | number =     ***          
+[20190113_194700] WARNING | number =                  
+[20190113_194700] WARNING | number =     ***          
+[20190113_194700] WARNING | number =    *             
+[20190113_194700] WARNING | number =                  
+[20190113_194700] WARNING | number =                  
+[20190113_194700] WARNING | number =                  
+[20190113_194700] WARNING | number =                  
+[20190113_194700] WARNING | number =     ***          
+[20190113_194700] WARNING | number =     ***          
+[20190113_194734]     LOG | Default Time Constructor
+[20190113_194734] WARNING | EntitiesList Constructor
+[20190113_194734] WARNING | number =                  
+[20190113_194734] WARNING | number =                  
+[20190113_194734] WARNING | number =                  
+[20190113_194734] WARNING | number =    *             
+[20190113_194734] WARNING | number =    *             
+[20190113_194734] WARNING | number =     ***          
+[20190113_194734] WARNING | number =     ***          
+[20190113_194734] WARNING | number =    *             
+[20190113_194734] WARNING | number =                  
+[20190113_194734] WARNING | number =                  
+[20190113_194734] WARNING | number =     ***          
+[20190113_194734] WARNING | number =                  
+[20190113_194734] WARNING | number =     ***          
+[20190113_194734] WARNING | number =    *             
+[20190113_194734] WARNING | number =                  
+[20190113_194734] WARNING | number =                  
+[20190113_194734] WARNING | number =                  
+[20190113_194734] WARNING | number =                  
+[20190113_194734] WARNING | number =     ***          
+[20190113_194734] WARNING | number =     ***          
+[20190113_194743]     LOG | 2
+[20190113_194743]     LOG | + +   
+[20190113_194744]     LOG | 1
+[20190113_194744]     LOG | +     
+[20190113_194744]     LOG | 0
+[20190113_194744]     LOG |       
+[20190113_194756]     LOG | Default Time Constructor
+[20190113_194756] WARNING | EntitiesList Constructor
+[20190113_194756] WARNING | number =                  
+[20190113_194756] WARNING | number =                  
+[20190113_194756] WARNING | number =                  
+[20190113_194756] WARNING | number =    *             
+[20190113_194756] WARNING | number =    *             
+[20190113_194756] WARNING | number =     ***          
+[20190113_194756] WARNING | number =     ***          
+[20190113_194756] WARNING | number =    *             
+[20190113_194756] WARNING | number =                  
+[20190113_194756] WARNING | number =                  
+[20190113_194756] WARNING | number =     ***          
+[20190113_194756] WARNING | number =                  
+[20190113_194756] WARNING | number =     ***          
+[20190113_194756] WARNING | number =    *             
+[20190113_194756] WARNING | number =                  
+[20190113_194756] WARNING | number =                  
+[20190113_194756] WARNING | number =                  
+[20190113_194756] WARNING | number =                  
+[20190113_194756] WARNING | number =     ***          
+[20190113_194756] WARNING | number =     ***          
+[20190113_195012]     LOG | Default Time Constructor
+[20190113_195012] WARNING | EntitiesList Constructor
+[20190113_195012] WARNING | number =                  
+[20190113_195012] WARNING | number =                  
+[20190113_195012] WARNING | number =                  
+[20190113_195012] WARNING | number =    *             
+[20190113_195012] WARNING | number =    *             
+[20190113_195012] WARNING | number =     ***          
+[20190113_195012] WARNING | number =     ***          
+[20190113_195012] WARNING | number =    *             
+[20190113_195012] WARNING | number =                  
+[20190113_195012] WARNING | number =                  
+[20190113_195012] WARNING | number =     ***          
+[20190113_195012] WARNING | number =                  
+[20190113_195012] WARNING | number =     ***          
+[20190113_195012] WARNING | number =    *             
+[20190113_195012] WARNING | number =                  
+[20190113_195012] WARNING | number =                  
+[20190113_195012] WARNING | number =                  
+[20190113_195012] WARNING | number =                  
+[20190113_195012] WARNING | number =     ***          
+[20190113_195012] WARNING | number =     ***          
+[20190113_195019]     LOG | 2
+[20190113_195019]     LOG | + +   
+[20190113_195047]     LOG | 1
+[20190113_195047]     LOG | +     
+[20190113_195050]     LOG | 0
+[20190113_195050]     LOG |       

@@ -6,18 +6,29 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 10:38:55 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 19:38:13 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 20:00:59 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Game.hpp"
 #include "Decors.hpp"
 
+const std::string	Game::_endScreen[7] = {
+	"/*****************************\\",
+	"|                             |",
+	"|        ~ GAME OVER ~        |",
+	"|                             |",
+	"|  (press SPACE to continue)  |",
+	"|                             |",
+	"\\*****************************/",
+};
+
 Game::Game(void):
 	AEntity()
 {
 	_spawnYMax = GameLoop::getBoardHeight() - 13;
 	_spawnYMin = 8;
+	_gameOver = false;
 	init();
 	_collisionMask = NO_COLLISION;
 }
@@ -65,4 +76,10 @@ void Game::init()
 		width += 16;
 	}
 	GameLoop::addEntity(new Player(0, int(GameLoop::getBoardHeight()/2)));
+}
+
+void	Game::die(void)
+{
+	_sprite = _endScreen;
+
 }

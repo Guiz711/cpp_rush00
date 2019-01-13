@@ -52,7 +52,7 @@ Decors::Decors( void ): AEntity(){
     _sprite[4] = spritePool[number][4];
     _sprite[5] = spritePool[number][5];
     _sprite[6] = spritePool[number][6];
-    _color = COLOR_WHITE;
+    _color = COLOR_MAGENTA;
     _collisionMask = LAND;
     return;
 }
@@ -65,7 +65,7 @@ Decors::Decors( bool footer, float xPos, float yPos ): AEntity(xPos, yPos){
     _footer = footer;
     _collisionMask = LAND;
     _sprite = new std::string[7];
-    _color = COLOR_WHITE;
+    _color = COLOR_MAGENTA;
     if (footer == true){
         _sprite[0] = spritePool[number][0];
         _sprite[1] = spritePool[number][1];

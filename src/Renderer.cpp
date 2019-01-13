@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 15:16:10 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 19:23:42 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 19:50:07 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ Renderer::Renderer(void)
 	curs_set(0);
 	getmaxyx(stdscr, _height, _width);
 	start_color();
+	init_pair(1, COLOR_WHITE, COLOR_BLACK);
+	init_pair(2, COLOR_GREEN, COLOR_BLACK);
+	init_pair(3, COLOR_RED, COLOR_BLACK);
+	init_pair(4, COLOR_YELLOW, COLOR_BLACK);
 }
 
 Renderer::Renderer(const Renderer& src)
@@ -55,11 +59,18 @@ void		Renderer::renderScreen(EntityLink *entities)
 
 void		Renderer::placeSprite(int x, int y, std::string *sprite, chtype color)
 {
-	init_pair(1, color, COLOR_BLACK);
+	int attr = 1;
+
+	if(color == COLOR_GREEN)
+		attr = COLOR_PAIR(2);
+	else if (color == COLOR_RED)
+		attr = COLOR_PAIR(3);
+	else if (color == COLOR_MAGENTA)
+		attr = COLOR_PAIR(1) | A_DIM;
 	for (int v = 0; sprite[v][0]; ++v)
 		for (int u = 0; sprite[v][u]; ++u)
 			if (sprite[v][u] != ' ')
-				mvwaddch(stdscr, y + v, x + u, sprite[v][u] | COLOR_PAIR(1));
+				mvwaddch(stdscr, y + v, x + u, sprite[v][u] | attr);
 }
 
 int			Renderer::getScreenWidth(void) const { return _width; }

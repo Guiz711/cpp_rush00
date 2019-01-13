@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 16:29:58 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 18:53:58 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 19:45:04 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Hud::Hud(void):
 
 	_collisionMask = UI;
 
-	_color = COLOR_WHITE;
+	_color = COLOR_GREEN;
 }
 
 Hud::Hud(Hud const &src):
@@ -50,7 +50,7 @@ Hud::Hud( float posX, float posY ):
 
 	_collisionMask = UI;
 
-	_color = COLOR_WHITE;
+	_color = COLOR_GREEN;
 }
 
 Hud::~Hud(void) {}
