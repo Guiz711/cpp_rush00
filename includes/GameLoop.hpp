@@ -6,15 +6,15 @@
 #include "EntitiesList.hpp"
 #include "Inputs.hpp"
 #include "Physics.hpp"
-#include "TimeClass.hpp"
+#include "Time.hpp"
 
 class GameLoop{
   private:
-    EntitiesList        *_list;
+    EntitiesList        _list;
     Renderer            _renderer;
     Inputs              _inputs;
     Physics             _physics;
-    TimeClass           _time;
+    Time           		_time;
 
     void _update( void );
 
@@ -26,7 +26,7 @@ class GameLoop{
 
     GameLoop &operator=(const GameLoop &rhs);
 
-    EntitiesList *getList( void ) const ;
+    const EntitiesList &getList( void ) const ;
 
     void checkAlive( void );
     void startLoop( void );

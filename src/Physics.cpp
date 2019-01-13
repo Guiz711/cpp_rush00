@@ -63,20 +63,22 @@ bool checkCollision(AEntity *entity1, AEntity *entity2){
 
 
 void Physics::checkCollisions( void ){
-    EntityLink    list1;
-    EntityLink    list2;
+    EntityLink    *list1;
+    EntityLink    *list2;
     AEntity       *entity1;
     AEntity       *entity2;
     Collision     mask1;
     Collision     mask2;
     bool          res;
 
-    list1 = *(_list->getList());
-    entity1 = list1.entity;
-    while (list1.next != NULL){
+    list1 = _list->getList();
+	if (!list1)
+		return;
+    entity1 = list1->entity;
+    while (list1->next != NULL){
         mask1 = entity1->getCollisionMask();
-        list2 = *list1.next;
-        entity2 = list2.entity;
+        list2 = list1->next;
+        entity2 = list2->entity;
         while (entity2 != NULL){
           mask2 = entity2->getCollisionMask();
           if (mask1 & mask2){
@@ -87,14 +89,14 @@ void Physics::checkCollisions( void ){
                 std::cout << "collision" << std::endl;
             }
           }
-          if (list2.next != NULL){
-            list2 = *list2.next;
-            entity2 = list2.entity;
+          if (list2->next != NULL){
+            list2 = list2->next;
+            entity2 = list2->entity;
           }
           else
             entity2 = NULL;
         }
-        list1 = *list1.next;
-        entity1 = list1.entity;
+        list1 = list1->next;
+        entity1 = list1->entity;
     }
 }

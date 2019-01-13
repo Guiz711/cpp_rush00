@@ -6,15 +6,18 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/12 12:33:22 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/12 15:08:31 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 09:13:44 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "EntitiesList.hpp"
+#include "Log.hpp"
 
 EntitiesList::EntitiesList(void):
 	_list(NULL)
-{}
+{
+	Log::instance().logWarning("EntitiesList Constructor");
+}
 
 EntitiesList::EntitiesList(const EntitiesList& src)
 {
