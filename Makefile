@@ -13,10 +13,10 @@
 NAME = ft_retro
 
 SRC_NAME = Log.cpp AEntity.cpp EntitiesList.cpp main.cpp Renderer.cpp \
-	Time.cpp Inputs.cpp Physics.cpp GameLoop.cpp Player.cpp
+	Time.cpp Inputs.cpp Physics.cpp GameLoop.cpp Player.cpp Projectile.cpp
 
 INC_NAME = Log.hpp AEntity.hpp EntitiesList.hpp Renderer.hpp Inputs.hpp Time.hpp \
-	Player.hpp
+	Player.hpp Projectile.hpp
 
 INC_PATH = ./includes
 

@@ -1,12 +1,8 @@
 #ifndef AENTITY_HPP
 # define AENTITY_HPP
 
-# include <string>
-# include <ncurses.h>
-# include "Inputs.hpp"
-# include "Time.hpp"
-# include "Log.hpp"
-# include "GameLoop.hpp"
+#include <string>
+#include <ncurses.h>
 
 enum Collision
 {
@@ -21,14 +17,14 @@ class AEntity{
   protected:
     std::string    	*_sprite;
     bool            _isAlive;
-    int     		_color;
+    int     				_color;
     float           _xPos;
-	float           _yPos;
+		float          	_yPos;
     Collision       _collisionMask;
 
   public:
     AEntity( void );
-    AEntity( int xPos, int yPos );
+    AEntity( float xPos, float yPos );
     AEntity( AEntity & src );
     virtual ~AEntity( void );
 
@@ -39,7 +35,7 @@ class AEntity{
     int          getXPos( void ) const ;
     int          getYPos( void ) const ;
     std::string  *getSprite( void ) const ;
-    int  		 getColor( void ) const ;
+    int  		 		 getColor( void ) const ;
     bool         isAlive( void ) const ;
     Collision    getCollisionMask( void ) const ;
     void         setNotAlive( void );
