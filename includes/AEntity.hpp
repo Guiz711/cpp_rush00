@@ -6,6 +6,7 @@
 # include "Inputs.hpp"
 # include "Time.hpp"
 # include "Log.hpp"
+# include "GameLoop.hpp"
 
 enum Collision
 {

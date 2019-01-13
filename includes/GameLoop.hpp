@@ -10,7 +10,7 @@
 
 class GameLoop{
   private:
-    EntitiesList        _list;
+    static EntitiesList *_list;
     Renderer            _renderer;
     Inputs              _inputs;
     Physics             _physics;
@@ -26,10 +26,11 @@ class GameLoop{
 
     GameLoop &operator=(const GameLoop &rhs);
 
-    const EntitiesList &getList( void ) const ;
+	EntitiesList *getList( void ) const ;
 
     void checkAlive( void );
     void startLoop( void );
+	static void addEntity(AEntity *entity);
 
 };
 
