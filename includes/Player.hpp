@@ -6,7 +6,7 @@
 /*   By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/13 09:49:52 by gmichaud          #+#    #+#             */
-/*   Updated: 2019/01/13 11:45:40 by gmichaud         ###   ########.fr       */
+/*   Updated: 2019/01/13 12:30:31 by gmichaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 # define PLAYER_HPP
 
 # include "AEntity.hpp"
-# include "Inputs.hpp"
-# include "Time.hpp"
-# include "Log.hpp"
 # include "GameLoop.hpp"
 
 class Player: public AEntity
@@ -30,10 +27,14 @@ class Player: public AEntity
 		Player&	operator=(const Player& rhs);
 
 		virtual void update( void );
-    	virtual void onCollision( void );
+    virtual void onCollision( void );
+		int 				 getLife( void ) const ;
+		float			   getVelocity0( void ) const ;
+		float			   getVelocity1( void ) const ;
 
 	private:
 		float		_velocity[2];
+		int			_life;
 };
 
 #endif

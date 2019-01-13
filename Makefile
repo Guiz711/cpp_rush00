@@ -6,17 +6,17 @@
 #    By: gmichaud <gmichaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/19 14:03:15 by jgourdin          #+#    #+#              #
-#    Updated: 2019/01/13 11:18:12 by gmichaud         ###   ########.fr        #
+#    Updated: 2019/01/13 12:31:09 by gmichaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_retro
 
 SRC_NAME = Log.cpp AEntity.cpp EntitiesList.cpp main.cpp Renderer.cpp \
-	Time.cpp Inputs.cpp Physics.cpp GameLoop.cpp Player.cpp Game.cpp
+	Time.cpp Inputs.cpp Physics.cpp GameLoop.cpp Player.cpp Game.cpp Projectile.cpp
 
 INC_NAME = Log.hpp AEntity.hpp EntitiesList.hpp Renderer.hpp Inputs.hpp Time.hpp \
-	Player.hpp Game.hpp Physics.hpp GameLoop.hpp
+	Player.hpp Game.hpp Physics.hpp GameLoop.hpp Projectile.hpp
 
 INC_PATH = ./includes
 

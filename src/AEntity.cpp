@@ -12,7 +12,7 @@ AEntity::AEntity( void ):
   return;
 }
 
-AEntity::AEntity( int xPos, int yPos ):
+AEntity::AEntity( float xPos, float yPos ):
 	_xPos(xPos),
 	_yPos(yPos),
 	_isAlive(true),

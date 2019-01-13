@@ -62,7 +62,7 @@ void		Log::log(const std::string& message) const
 	std::ofstream	ofs(_FilePath.c_str(), std::ios::out | std::ios::app);
 
 	if (ofs.is_open())
-		ofs << this->getTimestamp() 
+		ofs << this->getTimestamp()
 			<< "    LOG | " << message << std::endl;
 	else
 		std::cout << this->_FilePath << " couldn't be open." << std::endl;
