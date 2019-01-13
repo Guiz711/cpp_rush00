@@ -23,6 +23,8 @@ Renderer::Renderer(void)
 
 Renderer::Renderer(const Renderer& src)
 {
+	_width = src.getScreenWidth();
+	_height = src.getScreenHeight();
 	return;
 }
 
@@ -33,6 +35,8 @@ Renderer::~Renderer(void)
 
 Renderer&	Renderer::operator=(const Renderer& rhs)
 {
+	_width = rhs.getScreenWidth();
+	_height = rhs.getScreenHeight();
 	return *this;
 }
 

@@ -21,7 +21,6 @@ class Game: public AEntity
 {
 	public:
 		Game(void);
-		Game(const Game& src);
 		~Game(void);
 
 		Game&	operator=(const Game& rhs);
@@ -29,10 +28,15 @@ class Game: public AEntity
 		virtual void	update( void );
     	virtual void	onCollision( void );
 
+		int				getSpawnMax( void );
+		int				getSpawnMin( void );
+
 	private:
 		int				_spawnYMin;
 		int				_spawnYMax;
 		void			init();
+
+		Game(const Game& src);
 };
 
 #endif

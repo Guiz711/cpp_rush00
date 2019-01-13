@@ -22,6 +22,21 @@ Game::Game(void):
 	_collisionMask = NO_COLLISION;
 }
 
+Game::Game(const Game& src){
+	_spawnYMax = src.getSpawnMax();
+	_spawnYMin = src.getSpawnMin();
+	init();
+	_collisionMask = src.getCollisionMask();
+}
+
+Game &Game::operator=(const Game &rhs){
+	_spawnYMax = rhs.getSpawnMax();
+	_spawnYMin = rhs.getSpawnMin();
+	init();
+	_collisionMask = rhs.getCollisionMask();
+	return *this;
+}
+
 Game::~Game(void) {}
 
 void	Game::update(void)
@@ -45,6 +60,14 @@ void	Game::update(void)
 	}
 
 
+}
+
+int	Game::getSpawnMax( void ){
+	return _spawnYMax;
+}
+
+int	Game::getSpawnMin( void ){
+	return _spawnYMin;
 }
 
 void Game::onCollision(void)
