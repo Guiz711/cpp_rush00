@@ -11,6 +11,7 @@
 #include "MedEnemy.hpp"
 #include "SimpleEnemy.hpp"
 #include "BigEnemy.hpp"
+#include "Projectile.hpp"
 
 class GameLoop{
   private:

@@ -1,4 +1,6 @@
 #include "MedEnemy.hpp"
+#include "GameLoop.hpp"
+#include <cmath>
 
 MedEnemy::MedEnemy( void ): AEnemy(){
   _sprite = new std::string[4];
@@ -52,13 +54,17 @@ MedEnemy &MedEnemy::operator=( MedEnemy const &rhs){
 }
 
 void MedEnemy::update(void){
+  double  time;
+  
   _velocity[0] = 0;
 	_velocity[1] = 0;
 
-	_velocity[0] = -6000;
+	_velocity[0] = -13;
 
-//CONDITION RANDOM
-		//GameLoop::addEntity(new Projectile(_xPos - 1, _yPos, _collisionMask, 20));
+  time = Time::getTimeSinceStartup();
+
+  if ( 0 < std::fmod(time,5) && std::fmod(time,5) < 0.05)
+		GameLoop::addEntity(new Projectile(_xPos - 1, _yPos + 1, _collisionMask, 20));
 
 	_xPos += _velocity[0] * (float)Time::getDeltaTime();
 }

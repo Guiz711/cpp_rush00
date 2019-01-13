@@ -37,5 +37,6 @@ void Game::onCollision(void)
 void Game::init()
 {
 	GameLoop::addEntity(new Player);
-	GameLoop::addEntity(new SimpleEnemy(100,10));
+	GameLoop::addEntity(new MedEnemy(120,10));
+	GameLoop::addEntity(new BigEnemy(150, 30));
 }

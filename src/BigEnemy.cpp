@@ -1,4 +1,6 @@
 #include "BigEnemy.hpp"
+#include "GameLoop.hpp"
+#include <cmath>
 
 BigEnemy::BigEnemy( void ): AEnemy(){
   _sprite = new std::string[6];
@@ -56,13 +58,18 @@ BigEnemy &BigEnemy::operator=( BigEnemy const &rhs){
 }
 
 void BigEnemy::update(void){
+  double    time;
+
   _velocity[0] = 0;
 	_velocity[1] = 0;
 
-	_velocity[0] = -8000;
+	_velocity[0] = -15;
 
-//CONDITION RANDOM
-		//GameLoop::addEntity(new Projectile(_xPos - 1, _yPos, _collisionMask, 20));
+  time = Time::getTimeSinceStartup();
 
+  if ( 0 < std::fmod(time,4) && std::fmod(time,4) < 0.05){
+		GameLoop::addEntity(new Projectile(_xPos - 1, _yPos + 1, _collisionMask, 20));
+    GameLoop::addEntity(new Projectile(_xPos - 1, _yPos + 3, _collisionMask, 20));
+  }
 	_xPos += _velocity[0] * (float)Time::getDeltaTime();
 }

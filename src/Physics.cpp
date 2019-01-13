@@ -57,8 +57,6 @@ bool checkCollision(AEntity *entity1, AEntity *entity2){
         for (int j2 = 0; sprite2[i2][j2]; j2 += 1){
           if ((yPos1 + i1 == yPos2 + i2) && (xPos1 + j1 == xPos2 + j2) && (sprite1[i1][j1] != ' ') && (sprite2[i2][j2] != ' '))
           {
-		        Log::instance().logError("true");
-           std::cout<< sprite1 <<std::endl;
             return true;
           }
         }

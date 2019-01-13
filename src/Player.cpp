@@ -31,6 +31,7 @@ Player::Player(void):
 	_collisionMask = PLAYER;
 
 	_color = COLOR_GREEN;
+	_life = 5;
 }
 
 Player::Player(Player const &src): AEntity(){
@@ -65,6 +66,7 @@ Player::Player( float posX, float posY ):
 	_collisionMask = PLAYER;
 
 	_color = COLOR_GREEN;
+	_life = 5;
 }
 
 Player::~Player(void) {}

@@ -23,8 +23,8 @@ class Time{
 
     static double 		getDeltaTime(void);
     static double 		getTimeSinceStartup(void);
-	  double 				getStartupTime(void) const;
-	  double 				getLastFrameTime(void) const;
+	  double 				    getStartupTime(void) const;
+	  double 				    getLastFrameTime(void) const;
 };
 
 #endif
